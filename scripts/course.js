@@ -1,5 +1,5 @@
 // === course.js ===
-// Dynamically renders courses and updates total credits.
+// Dynamically renders courses and updates with total credits.
 // Array of course objects (edit/complement as you progress)
 const courses = [
   { subject: "WDD", number: 130, title: "Web Fundamentals", credits: 2, completed: true },
