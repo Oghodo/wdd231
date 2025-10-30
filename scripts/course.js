@@ -10,57 +10,54 @@ const courses = [
   { subject: "WDD", number: 231, title: "Frontend Web Development I", credits: 2, completed: false }
 ];
 
-const courseContainer = document.getElementById('courseContainer');
-const totalCreditsEl = document.getElementById('totalCredits');
-const filterButtons = document.querySelectorAll('.filter-btn');
+document.addEventListener("DOMContentLoaded", () => {
+  const courseContainer = document.getElementById("courseContainer");
+  const totalCreditsEl = document.getElementById("totalCredits");
+  const filterButtons = document.querySelectorAll(".filter-btn");
 
-// Function to display courses
-function displayCourses(courseList) {
-  // Clear container
-  courseContainer.innerHTML = '';
+  // Function to display courses
+  function displayCourses(courseList) {
+    courseContainer.innerHTML = ""; // Clear container
 
-  // Create cards dynamically
-  courseList.forEach(course => {
-    const card = document.createElement('div');
-    card.className = 'course-card';
-    if (course.completed) card.classList.add('completed');
+    courseList.forEach(course => {
+      const card = document.createElement("div");
+      card.className = "course-card";
+      if (course.completed) card.classList.add("completed");
 
-    card.innerHTML = `
-      <h3>${course.subject} ${course.number}</h3>
-      <p>${course.title}</p>
-      <p>Credits: ${course.credits}</p>
-      <p>Status: ${course.completed ? '✅ Completed' : '⏳ In Progress'}</p>
-    `;
+      card.innerHTML = `
+        <h3>${course.subject} ${course.number}</h3>
+        <p><strong>${course.title}</strong></p>
+        <p>Credits: ${course.credits}</p>
+        <p>Status: ${course.completed ? "✅ Completed" : "⏳ In Progress"}</p>
+      `;
 
-    courseContainer.appendChild(card);
-  });
+      courseContainer.appendChild(card);
+    });
 
-  // Calculate and display total credits for displayed courses
-  const totalCredits = courseList.reduce((sum, c) => sum + c.credits, 0);
-  totalCreditsEl.textContent = totalCredits;
-}
+    // Calculate and display total credits for the displayed list
+    const totalCredits = courseList.reduce((sum, c) => sum + c.credits, 0);
+    totalCreditsEl.textContent = totalCredits;
+  }
 
-// Function to handle filter clicks
-function handleFilter(event) {
-  // Remove active from all buttons
-  filterButtons.forEach(btn => {
-    btn.classList.remove('active');
-    btn.setAttribute('aria-pressed', 'false');
-  });
+  // Function to handle filter button clicks
+  function handleFilter(event) {
+    filterButtons.forEach(btn => {
+      btn.classList.remove("active");
+      btn.setAttribute("aria-pressed", "false");
+    });
 
-  // Add active to clicked button
-  const button = event.currentTarget;
-  button.classList.add('active');
-  button.setAttribute('aria-pressed', 'true');
+    const button = event.currentTarget;
+    button.classList.add("active");
+    button.setAttribute("aria-pressed", "true");
 
-  // Filter courses
-  const filter = button.id;
-  if (filter === 'all') displayCourses(courses);
-  else displayCourses(courses.filter(c => c.subject === filter.toUpperCase()));
-}
+    const filter = button.id;
+    if (filter === "all") displayCourses(courses);
+    else displayCourses(courses.filter(c => c.subject === filter.toUpperCase()));
+  }
 
-// Add event listeners
-filterButtons.forEach(btn => btn.addEventListener('click', handleFilter));
+  // Event listeners
+  filterButtons.forEach(btn => btn.addEventListener("click", handleFilter));
 
-// Initial display
-displayCourses(courses);
+  // Initial load
+  displayCourses(courses);
+});
