@@ -1,76 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
+  <!--Meta Tags-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WDD 231 - Home Page for Prince Omo's Web and Computer Programming projects.">
-  <meta name="author" content="Prince Omo">
-  <title>Prince Omo | WDD 231 - Course Home Page</title>
+  <title>Home | Omoregbe Oghodo WDD231</title>
+  <meta name="description" content="Official home page of Omoregbe Oghodo for WDD231 Web Frontend Development. Includes my courses, projects, and profile.">
+  <meta name="author" content="Omoregbe Oghodo">
 
-  <!-- Google Font -->
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- Stylesheets -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/small.css">
   <link rel="stylesheet" href="styles/large.css">
 
-  <!-- Scripts -->
-  <script src="scripts/navigation.js" defer></script>
-  <script src="scripts/date.js" defer></script>
-  <script src="scripts/course.js" defer></script>
+  <!-- JavaScript -->
+  <script defer src="scripts/navigation.js"></script>
+  <script defer src="scripts/date.js"></script>
+  <script defer src="scripts/course.js"></script>
 </head>
-
 <body>
+  <!-- Skip link for accessibility -->
+  <a class="skip-link" href="#mainContent">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
   <header>
-    <img src="images/logo.svg" alt="Site Logo" id="logo">
-    <span id="siteName">Prince Omo</span>
-    <button id="menu" aria-label="Open Menu">&#9776;</button>
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Omoregbe Oghodo logo">
+        <svg width="48" height="48" viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <rect width="24" height="24" rx="5" fill="#0ea5a4"></rect>
+          <circle cx="12" cy="12" r="6" fill="#ffffff"></circle>
+        </svg>
+      </a>
+
+      <!-- Site Name -->
+      <span class="site-name">Omoregbe Oghodo</span>
+
+      <!-- Hamburger Menu -->
+      <button id="menuToggle" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <!-- Navigation -->
+      <nav id="primaryNav" aria-label="Primary Navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="chamber.html">Chamber</a></li>
+          <li><a href="final.html">Final</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav id="navMenu">
-    <a href="index.html" class="active">Home</a>
-    <a href="#">Chamber</a>
-    <a href="#">Final</a>
-  </nav>
-
-  <main>
-    <h1>Home</h1>
-
-    <section id="intro">
-      <h2>Welcome to My WDD 231 Course Page</h2>
-      <p>
-        This website serves as my learning portfolio for the Web and Computer Programming Certificate. 
-        You’ll find my coursework, completed projects, and dynamic course list below.
-      </p>
-    </section>
-
-    <section id="certificate">
-      <h2>Certificate Courses</h2>
-      <div id="filterButtons">
-        <button id="all">All Courses</button>
-        <button id="wdd">WDD Courses</button>
-        <button id="cse">CSE Courses</button>
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="mainContent">
+    <!-- HERO / ABOUT SECTION -->
+    <section id="about" class="hero-section" aria-labelledby="aboutHeading">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 id="aboutHeading">Welcome to My WDD231 Homepage</h1>
+          <h2>About Me</h2>
+          <p>
+            Hello! I’m <strong>Omoregbe Oghodo</strong>, a student and footballer passionate about technology,
+            creativity, and continuous learning. This page showcases my web development journey,
+            projects, and coursework for the <strong>WDD231 Web Frontend Development</strong> class.
+          </p>
+        </div>
+        <div class="hero-image">
+          <!-- keep image optimized (<=125KB); using width/height and loading="lazy" -->
+          <img src="images/profile.jpg" alt="Portrait of Omoregbe Oghodo smiling" width="400" height="400" loading="lazy">
+        </div>
       </div>
-      <div id="courseCards"></div>
-      <p id="totalCredits"></p>
     </section>
 
-    <section id="contact">
-      <h2>Connect With Me</h2>
-      <p>Follow me on my professional profiles below!</p>
-      <ul class="social-links">
-        <li><a href="https://oghodo.github.io/wdd231/" target="_blank">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/feed/" target="_blank">LinkedIn</a></li>
-        <li><a href="#">Twitter</a></li>
-      </ul>
+    <!-- COURSES SECTION -->
+    <section id="courses" aria-labelledby="coursesHeading">
+      <h2 id="coursesHeading">My Certificate Courses</h2>
+      <div class="filters" role="toolbar" aria-label="Filter courses">
+        <button id="all" class="filter-btn active" aria-pressed="true">All</button>
+        <button id="wdd" class="filter-btn" aria-pressed="false">WDD</button>
+        <button id="cse" class="filter-btn" aria-pressed="false">CSE</button>
+      </div>
+
+      <div id="courseContainer" class="course-grid" aria-live="polite" aria-atomic="true"></div>
+
+      <p>Total Credits: <span id="totalCredits" aria-live="polite" aria-atomic="true">0</span></p>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" aria-labelledby="projectsHeading">
+      <h2 id="projectsHeading">Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <svg width="48" height="48" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <path d="M3 12l7-9v18zM14 3h7v18h-7z" fill="#0ea5a4"></path>
+          </svg>
+          <h3><a href="chamber.html">Chamber of Commerce</a></h3>
+          <p>A fully functional community website demonstrating real-world business listings and responsive design principles.</p>
+        </article>
+
+        <article class="project-card">
+          <svg width="48" height="48" viewBox="0 0 24 24" role="img" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" fill="#0ea5a4"></circle>
+          </svg>
+          <h3><a href="final.html">Final Project</a></h3>
+          <p>An advanced web development project combining modern front-end techniques and interactivity.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" aria-labelledby="contactHeading">
+      <h2 id="contactHeading">Contact Me</h2>
+      <p>Feel free to connect with me through any of the platforms below!</p>
+      <div class="social-icons" role="list">
+        <a href="https://oghodo.github.io/wdd231/" target="_blank" rel="noopener" aria-label="GitHub" role="listitem">
+          <!-- GitHub SVG -->
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#0ea5a4" role="img" aria-hidden="true">
+            <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.6-3.9-1.6-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.3 1.8 1.3 1.1 1.9 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.2 11.2 0 0 1 6 0C18 5 19 5.3 19 5.3c.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.3.8 1 .8 2v3c0 .4.2.7.8.6A10.9 10.9 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn" role="listitem">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="#0ea5a4" role="img" aria-hidden="true">
+            <path d="M20.45 20.45h-3.55v-5.6c0-1.34-.02-3.06-1.86-3.06-1.86 0-2.14 1.45-2.14 2.96v5.7H9.35V9.5h3.4v1.5h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.22 2.34 4.22 5.37v5.93zM5.34 8h-.02c-1.14 0-1.87-.76-1.87-1.72 0-.98.76-1.72 1.9-1.72s1.87.74 1.89 1.72c0 .96-.73 1.72-1.9 1.72zM7.1 20.45H3.6V9.5h3.5v10.95zM22.22 0H1.78C.8 0 0 .78 0 1.74v20.52C0 23.22.8 24 1.78 24h20.44C23.2 24 24 23.22 24 22.26V1.74C24 .78 23.2 0 22.22 0z"/>
+          </svg>
+        </a>
+      </div>
     </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <p>
-      &copy; <span id="currentyear"></span> | Prince Omo | Nigeria
-    </p>
-    <p id="lastModified"></p>
+    <div class="footer-container">
+      <p>&copy; <span id="currentyear"></span> Omoregbe Oghodo — Nigeria</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+    </div>
   </footer>
 </body>
 </html>
