@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory | Benin City Chamber of Commerce</title>
+  <meta name="description" content="Member directory for Benin City Chamber of Commerce.">
+  <meta name="author" content="Omoregbe Oghodo">
+
+  <!-- Facebook Open Graph Meta -->
+  <meta property="og:title" content="Benin City Chamber of Commerce Directory">
+  <meta property="og:description" content="Discover and connect with local businesses in Benin City.">
+  <meta property="og:image" content="https://github.com/Oghodo/wdd231/chamber/images/og-image.jpg">
+  <meta property="og:url" content="https://github.com/Oghodo/wdd231/chamber/directory.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico">
+
+  <!-- Normalize CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+    <h1>Benin City Chamber of Commerce</h1>
+    <nav>
+      <button id="menuButton">☰ Menu</button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="view-toggle">
+      <button id="gridView">Grid View</button>
+      <button id="listView">List View</button>
+    </section>
+
+    <section id="memberContainer" class="grid-view">
+      <!-- Cards will be injected here by JS -->
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="currentYear"></span> | Prince Omo | WDD 231 | 
+      <span id="lastModified"></span>
+    </p>
+  </footer>
+
+  <script src="js/scripts.js" defer></script>
+</body>
+</html>
