@@ -4,7 +4,7 @@
     "address": "123 Innovation Drive, Benin City",
     "phone": "555-123-4567",
     "website": "https://technova.com",
-    "image": "technova.png",
+    "image": "https://placehold.co/300x200/0d6efd/ffffff?text=TechNova",
     "membershipLevel": 3,
     "description": "Leading IT and consulting services for small businesses."
   },
@@ -13,7 +13,7 @@
     "address": "45 Garden Ave, Benin City",
     "phone": "555-987-6543",
     "website": "https://bloomflorist.com",
-    "image": "bloom.png",
+    "image": "https://placehold.co/300x200/d63384/ffffff?text=Bloom+Florist",
     "membershipLevel": 2,
     "description": "Local florist offering fresh flowers, event decor, and delivery services."
   },
@@ -22,7 +22,7 @@
     "address": "90 Energy Blvd, Benin City",
     "phone": "555-876-2345",
     "website": "https://greenwayfit.com",
-    "image": "greenway.png",
+    "image": "https://placehold.co/300x200/198754/ffffff?text=Greenway+Fitness",
     "membershipLevel": 1,
     "description": "Community gym with modern equipment and personal training facilities."
   },
@@ -31,7 +31,7 @@
     "address": "12 Palace Road, Benin City",
     "phone": "555-456-9876",
     "website": "https://royaltaste.com",
-    "image": "royaltaste.png",
+    "image": "https://placehold.co/300x200/fc8c03/000000?text=Royal+Taste",
     "membershipLevel": 2,
     "description": "Authentic local and continental dishes in a classy environment."
   },
@@ -40,7 +40,7 @@
     "address": "78 Unity Street, Benin City",
     "phone": "555-654-3210",
     "website": "https://smartprint.com",
-    "image": "smartprint.png",
+    "image": "https://placehold.co/300x200/6610f2/ffffff?text=SmartPrint",
     "membershipLevel": 1,
     "description": "Printing, branding, and digital design services for all businesses."
   },
@@ -49,7 +49,7 @@
     "address": "201 Airport Road, Benin City",
     "phone": "555-234-8901",
     "website": "https://ecoride.com",
-    "image": "ecoride.png",
+    "image": "https://placehold.co/300x200/20c997/ffffff?text=EcoRide",
     "membershipLevel": 3,
     "description": "Eco-friendly transport service offering safe and affordable rides."
   },
@@ -58,7 +58,7 @@
     "address": "34 Wisdom Lane, Benin City",
     "phone": "555-345-6789",
     "website": "https://brightminds.com",
-    "image": "brightminds.png",
+    "image": "https://placehold.co/300x200/fb923c/000000?text=Bright+Minds",
     "membershipLevel": 2,
     "description": "Educational center focused on creative learning for kids and teens."
   }
