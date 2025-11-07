@@ -1,6 +1,10 @@
-/* === styles.css === */
+/* === directory.css === */
+/* Author: Omoregbe Oghodo
+   Purpose: Styles for the Benin City Chamber of Commerce Directory page
+   Course: WDD 231
+*/
 
-/* ===== RESET & BASE STYLES ===== */
+/* ===== ROOT VARIABLES ===== */
 :root {
   --primary-color: #0b3d91;
   --primary-dark: #092c6a;
@@ -12,34 +16,38 @@
   --transition-speed: 0.3s;
 }
 
+/* ===== RESET ===== */
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* ===== BASE STYLES ===== */
+body {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ===== HEADER & FOOTER ===== */
-header,
-footer {
+/* ===== HEADER ===== */
+header {
   background-color: var(--primary-color);
   color: var(--white);
-  padding: 1rem;
   text-align: center;
+  padding: 1rem;
 }
 
 header h1 {
-  margin: 0.5rem 0;
   font-size: 1.8rem;
+  margin: 0.5rem 0;
 }
 
-/* ===== NAVIGATION MENU ===== */
+/* ===== NAVIGATION ===== */
 nav {
   margin-top: 0.5rem;
 }
@@ -53,6 +61,7 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
+  transition: background var(--transition-speed);
 }
 
 #menuButton:hover,
@@ -63,8 +72,6 @@ nav {
 
 nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 nav ul li {
@@ -81,16 +88,14 @@ nav ul li a {
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
-  border-bottom: 2px solid var(--white);
-}
-
+nav ul li a:focus,
 nav ul li a.active {
   border-bottom: 2px solid var(--white);
 }
 
-/* ===== MAIN CONTENT ===== */
+/* ===== MAIN ===== */
 main {
+  flex: 1;
   padding: 1rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -99,10 +104,10 @@ main {
 .page-title {
   text-align: center;
   color: var(--primary-color);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-/* ===== VIEW TOGGLE BUTTONS ===== */
+/* ===== VIEW TOGGLE ===== */
 .view-toggle {
   text-align: center;
   margin-bottom: 1.5rem;
@@ -185,12 +190,19 @@ main {
 }
 
 /* ===== FOOTER ===== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+}
+
 footer p {
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
 
-/* ===== ERROR MESSAGE ===== */
+/* ===== ERROR ===== */
 .error {
   text-align: center;
   color: red;
@@ -223,7 +235,7 @@ footer p {
   }
 }
 
-/* ===== ACCESSIBILITY HELPERS ===== */
+/* ===== ACCESSIBILITY ===== */
 .visually-hidden {
   position: absolute;
   width: 1px;

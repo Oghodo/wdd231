@@ -1,11 +1,14 @@
-// === scripts.js ===
-// Handles date display, member loading, and view toggling for the directory page
+/* === scripts/directory.js ===
+   Benin City Chamber of Commerce Directory
+   Handles footer info, member loading, and grid/list toggle
+   Author: Omoregbe Oghodo
+   ----------------------------------------------- */
 
-// === Footer Information ===
+/* === Footer Date & Last Modified === */
 document.querySelector("#currentYear").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
-// === Load and Display Members ===
+/* === Load and Display Members === */
 async function loadMembers() {
   try {
     const response = await fetch("data/members.json");
@@ -16,12 +19,12 @@ async function loadMembers() {
   } catch (error) {
     console.error("Error loading member data:", error);
     document.getElementById("memberContainer").innerHTML = `
-      <p class="error">Unable to load member data at this time. Please try again later.</p>
+      <p class="error">⚠️ Unable to load member data at this time. Please try again later.</p>
     `;
   }
 }
 
-// === Display Members in Grid/List View ===
+/* === Display Members (Grid/List) === */
 function displayMembers(members) {
   const container = document.getElementById("memberContainer");
   container.innerHTML = "";
@@ -31,7 +34,7 @@ function displayMembers(members) {
     card.classList.add("member-card");
 
     card.innerHTML = `
-      <img src="images/${member.image}" alt="${member.name} logo" loading="lazy">
+      <img src="images/${member.image}" alt="Logo of ${member.name}" loading="lazy">
       <div class="member-info">
         <h3>${member.name}</h3>
         <p>${member.address}</p>
@@ -46,7 +49,7 @@ function displayMembers(members) {
   });
 }
 
-// === Initialize Page ===
+/* === Initialize Page === */
 document.addEventListener("DOMContentLoaded", () => {
   loadMembers();
 
