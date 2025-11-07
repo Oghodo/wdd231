@@ -1,33 +1,34 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <!-- ===== META INFORMATION ===== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Directory | Benin City Chamber of Commerce</title>
-  <meta name="description" content="Member directory for Benin City Chamber of Commerce.">
+  <meta name="description" content="Discover and connect with local businesses through the Benin City Chamber of Commerce directory.">
   <meta name="author" content="Omoregbe Oghodo">
+  <meta name="theme-color" content="#004aad">
 
-  <!-- Facebook Open Graph Meta -->
+  <!-- ===== OPEN GRAPH META TAGS ===== -->
   <meta property="og:title" content="Benin City Chamber of Commerce Directory">
-  <meta property="og:description" content="Discover and connect with local businesses in Benin City.">
+  <meta property="og:description" content="Explore verified businesses, organizations, and entrepreneurs in Benin City.">
   <meta property="og:image" content="https://github.com/Oghodo/wdd231/chamber/images/og-image.jpg">
   <meta property="og:url" content="https://github.com/Oghodo/wdd231/chamber/directory.html">
   <meta property="og:type" content="website">
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico">
+  <!-- ===== FAVICON ===== -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- Normalize CSS -->
+  <!-- ===== STYLESHEETS ===== -->
   <link rel="stylesheet" href="css/normalize.css">
-  <!-- Main CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header>
     <h1>Benin City Chamber of Commerce</h1>
-    <nav>
-      <button id="menuButton">☰ Menu</button>
+    <nav id="mainNav">
+      <button id="menuButton" aria-label="Toggle Navigation Menu" aria-expanded="false">☰ Menu</button>
       <ul id="navMenu">
         <li><a href="index.html">Home</a></li>
         <li><a href="directory.html" class="active">Directory</a></li>
@@ -38,22 +39,25 @@
   </header>
 
   <main>
+    <h2 class="page-title">Business Directory</h2>
+
     <section class="view-toggle">
-      <button id="gridView">Grid View</button>
+      <h3 class="visually-hidden">View Options</h3>
+      <button id="gridView" class="active-view">Grid View</button>
       <button id="listView">List View</button>
     </section>
 
-    <section id="memberContainer" class="grid-view">
-      <!-- Cards will be injected here by JS -->
+    <section id="memberContainer" class="grid-view" aria-live="polite">
+      <!-- Business cards or list items will be dynamically added here -->
     </section>
   </main>
 
   <footer>
-    <p>&copy; <span id="currentYear"></span> | Prince Omo | WDD 231 | 
-      <span id="lastModified"></span>
-    </p>
+    <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
+    <p id="lastModified"></p>
   </footer>
 
-  <script src="js/scripts.js" defer></script>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="scripts/directory.js" defer></script>
 </body>
 </html>

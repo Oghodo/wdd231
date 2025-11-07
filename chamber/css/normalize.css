@@ -1,45 +1,58 @@
 /* === normalize.css === */
-/* Modern Normalize v2 (simplified for class use) */
+/* Modern Normalize v2 (Simplified for Class Use)
+   ------------------------------------------------
+   Purpose: Reset default browser styles for consistent
+   rendering across different browsers.
+--------------------------------------------------- */
 
+/* Root Elements */
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
 }
 
+/* Base Styles */
 body {
   margin: 0;
 }
 
+/* Structural Elements */
 main {
   display: block;
 }
 
+/* Headings */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
+/* Horizontal Rule */
 hr {
   height: 0;
   color: inherit;
 }
 
+/* Links */
 a {
   background-color: transparent;
   text-decoration: none;
 }
 
+/* Text Formatting */
 b,
 strong {
   font-weight: bolder;
 }
 
+/* Images */
 img {
   border-style: none;
   max-width: 100%;
   height: auto;
 }
 
+/* Form Elements */
 button,
 input {
   font-family: inherit;
