@@ -1,7 +1,7 @@
 /* === small.css (mobile-first) === */
 :root {
-  --primary-color: #0e1da5; /* teal */
-  --accent-color: #047857;  /* darker green for sufficient contrast */
+  --primary-color: #0e1da5;
+  --accent-color: #047857;
   --text-color: #222222;
   --bg-color: #ffffff;
   --muted: #6b7280;
@@ -25,7 +25,7 @@ body {
   font-family: var(--font-family);
   line-height: 1.6;
   color: var(--text-color);
-  background-color: #f7faf9; /* subtle off-white background */
+  background-color: #f7faf9;
   padding: 0 1rem;
 }
 
@@ -53,6 +53,8 @@ header {
   padding: 1rem 0;
   border-bottom: 2px solid rgba(4,120,87,0.08);
   background: #ffffff;
+  position: relative;
+  z-index: 100;
 }
 
 .header-container {
@@ -76,7 +78,7 @@ header {
   flex: 1;
 }
 
-/* hamburger button */
+/* ===== Hamburger Menu Button ===== */
 #menuToggle {
   font-size: 1.8rem;
   background: none;
@@ -85,13 +87,18 @@ header {
   color: var(--primary-color);
   padding: 0.35rem;
   border-radius: 6px;
+  transition: transform 0.25s ease, background-color 0.2s;
 }
 #menuToggle:focus {
   outline: 3px solid rgba(14,165,164,0.18);
   outline-offset: 3px;
 }
+#menuToggle:hover {
+  background-color: rgba(14,165,164,0.08);
+  transform: rotate(5deg);
+}
 
-/* nav (mobile hidden by default) */
+/* ===== NAVIGATION MENU ===== */
 #primaryNav {
   display: none;
   flex-direction: column;
@@ -101,6 +108,12 @@ header {
   margin-top: 0.5rem;
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 #primaryNav ul {
@@ -109,7 +122,9 @@ header {
   padding: 0.25rem 0;
 }
 
-#primaryNav li + li { margin-top: 0.25rem; }
+#primaryNav li + li {
+  margin-top: 0.25rem;
+}
 
 #primaryNav a {
   text-decoration: none;
@@ -118,6 +133,7 @@ header {
   display: block;
   border-radius: 6px;
   font-weight: 600;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 #primaryNav a:hover,
@@ -127,9 +143,27 @@ header {
   outline: none;
 }
 
-/* open state toggled by JS */
+/* === Open State (Controlled by JS) === */
 #primaryNav.open {
   display: flex;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* === Animation for menu slide === */
+#primaryNav.open ul {
+  animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ===== MAIN ===== */
@@ -137,7 +171,6 @@ main {
   margin: 1.5rem 0;
 }
 
-/* Headings */
 h1, h2 {
   color: var(--primary-color);
   margin-bottom: 0.35rem;
@@ -189,9 +222,11 @@ section {
   box-shadow: 0 3px 10px rgba(2,6,23,0.03);
 }
 
-.course-card h3 { margin-bottom: 0.25rem; }
+.course-card h3 {
+  margin-bottom: 0.25rem;
+}
 .course-card.completed {
-  background-color: #ecfdf5; /* light green */
+  background-color: #ecfdf5;
   border-color: rgba(4,120,87,0.16);
 }
 
@@ -298,4 +333,3 @@ footer {
   color: var(--muted);
   margin-top: 0.3rem;
 }
-/* ===== MEDIA QUERIES ===== */
