@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <!-- ===== META INFORMATION ===== -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Directory | Benin City Chamber of Commerce</title>
@@ -9,62 +8,68 @@
   <meta name="author" content="Omoregbe Oghodo">
   <meta name="theme-color" content="#004aad">
 
-  <!-- ===== OPEN GRAPH META TAGS ===== -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Benin City Chamber of Commerce Directory">
   <meta property="og:description" content="Explore verified businesses, organizations, and entrepreneurs in Benin City.">
   <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/og-image.jpg">
   <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/directory.html">
   <meta property="og:type" content="website">
 
-  <!-- ===== FAVICON ===== -->
+  <!-- Favicon -->
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- ===== GOOGLE FONTS (REQUIRED) ===== -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <!-- ===== STYLESHEETS ===== -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/directory.css">
 </head>
-
 <body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
   <header>
     <h1>Benin City Chamber of Commerce</h1>
-    <nav id="mainNav">
-      <button id="menuButton" aria-label="Toggle Navigation Menu" aria-expanded="false">☰ Menu</button>
+    <nav id="mainNav" aria-label="Main navigation">
+      <button id="menuButton" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
       <ul id="navMenu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html" class="active">Directory</a></li>
+        <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- ===== MAIN CONTENT ===== -->
   <main>
     <h2 class="page-title">Business Directory</h2>
 
+    <!-- View Toggle Buttons -->
     <section class="view-toggle">
       <h3 class="visually-hidden">View Options</h3>
       <button id="gridView" class="active-view">Grid View</button>
       <button id="listView">List View</button>
     </section>
 
-   <section id="memberContainer" class="grid-view" aria-live="polite">
-  <h3 class="visually-hidden">Member Directory Listings</h3>
-  <!-- Business cards or list items will be dynamically added here -->
-</section>
-
+    <!-- Member Listings -->
+    <section id="memberContainer" class="grid-view" aria-live="polite">
+      <h3 class="visually-hidden">Member Directory Listings</h3>
+      <!-- Cards dynamically loaded here -->
+    </section>
   </main>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
     <p id="lastModified"></p>
   </footer>
 
-  <!-- ===== SCRIPTS ===== -->
+  <!-- Scripts -->
   <script src="scripts/directory.js" defer></script>
 </body>
 </html>
