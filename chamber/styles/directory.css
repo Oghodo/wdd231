@@ -1,6 +1,6 @@
-/* === directory.css === */
+/* === directory.css (updated for Home Page) === */
 /* Author: Omoregbe Oghodo
-   Purpose: Styles for the Benin City Chamber of Commerce Directory page
+   Purpose: Styles for the Benin City Chamber of Commerce Directory and Home page
    Course: WDD 231
 */
 
@@ -78,7 +78,7 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a.active, nav ul li a[aria-curre
 main { flex: 1; padding: 1rem; max-width: 1200px; margin: 0 auto; }
 .page-title { text-align: center; color: var(--primary-color); margin-bottom: 1.5rem; }
 
-/* VIEW TOGGLE */
+/* VIEW TOGGLE (Directory only) */
 .view-toggle { text-align: center; margin-bottom: 1.5rem; }
 .view-toggle button {
   margin: 0 0.5rem;
@@ -94,8 +94,8 @@ main { flex: 1; padding: 1rem; max-width: 1200px; margin: 0 auto; }
 .view-toggle button:hover { background-color: var(--primary-dark); }
 .active-view { background-color: var(--accent-color); }
 
-/* MEMBER CARDS */
-#memberContainer.grid-view {
+/* MEMBER CARDS (Directory & Spotlight) */
+#memberContainer.grid-view, .spotlight-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
@@ -129,7 +129,67 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
 /* ERROR */
 .error { text-align: center; color: red; font-weight: bold; margin-top: 2rem; }
 
-/* RESPONSIVE MENU */
+/* HERO SECTION */
+.hero {
+  position: relative;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+.hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
+}
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(11, 61, 145, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+}
+.hero-overlay h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+.hero-overlay p { font-size: 1.2rem; margin-bottom: 1rem; }
+.cta-button {
+  display: inline-block;
+  background: var(--accent-color);
+  color: var(--white);
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background var(--transition-speed);
+}
+.cta-button:hover { background: var(--primary-dark); }
+
+/* WEATHER SECTION */
+.weather {
+  background: var(--white);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.weather p { font-size: 1.2rem; margin-bottom: 1rem; }
+#forecast ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+#forecast li {
+  background: var(--background-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  min-width: 70px;
+}
+
+/* RESPONSIVE MENU & HERO TEXT */
 @media (max-width: 640px) {
   #menuButton { display: block; margin: 0.5rem auto; }
   nav ul {
@@ -142,6 +202,12 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
   }
   nav ul.show { display: flex; }
   nav ul li { display: block; margin: 0.75rem 0; }
+
+  .hero-overlay h2 { font-size: 1.5rem; }
+  .hero-overlay p { font-size: 1rem; }
+  .cta-button { padding: 0.5rem 1rem; }
+
+  #forecast ul { flex-direction: column; gap: 0.5rem; }
 }
 @media (min-width: 641px) {
   #menuButton { display: none; }
@@ -157,3 +223,4 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
   overflow: hidden; border: 0;
   clip: rect(0 0 0 0);
 }
+/* === END OF directory.css === */
