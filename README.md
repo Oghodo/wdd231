@@ -1,1 +1,1 @@
-Web Frontend Development I
+WDD231: Web Frontend Development I
