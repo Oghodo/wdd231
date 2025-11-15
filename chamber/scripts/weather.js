@@ -1,59 +1,47 @@
 /* === weather.js ===
-   Displays current weather and 3-day forecast
+   Benin City Chamber of Commerce Weather Display
    Author: Omoregbe Oghodo
 */
 
-const apiKey = "665909e134db00277279afaabddd1662";
-const city = "Benin City";
-const units = "metric"; // Celsius
-const currentTempEl = document.getElementById("current-temp");
-const weatherDescEl = document.getElementById("weather-desc");
-const forecastEl = document.getElementById("forecast").querySelector("ul");
+const weatherEl = document.getElementById("weather");
+const forecastEl = document.getElementById("forecast");
 
-async function getWeather() {
+const apiKey = "665909e134db00277279afaabddd1662";
+const city = "Benin City, NG";
+const units = "metric"; // Celsius
+
+async function loadWeather() {
   try {
-    // Current weather
-    const currentRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${units}&appid=${apiKey}`
     );
-    const currentData = await currentRes.json();
-    currentTempEl.textContent = `${Math.round(currentData.main.temp)}°C`;
-    weatherDescEl.textContent = currentData.weather[0].description;
+    if (!response.ok) throw new Error("Weather data not available");
+    const data = await response.json();
+
+    // Current weather
+    const current = data.list[0];
+    document.getElementById("current-temp").textContent = `${Math.round(current.main.temp)}°C`;
+    document.getElementById("weather-desc").textContent = current.weather[0].description;
 
     // 3-day forecast
-    const forecastRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`
-    );
-    const forecastData = await forecastRes.json();
+    const days = [1, 2, 3];
+    const forecastList = forecastEl.querySelector("ul");
+    forecastList.innerHTML = "";
 
-    // Filter forecast: pick one forecast per day (around 12:00)
-    const forecastDays = [];
-    const today = new Date().getDate();
-
-    forecastData.list.forEach(item => {
-      const date = new Date(item.dt_txt);
-      if (date.getHours() === 12 && date.getDate() !== today && forecastDays.length < 3) {
-        forecastDays.push({
-          day: date.toLocaleDateString("en-US", { weekday: "short" }),
-          temp: Math.round(item.main.temp)
-        });
-      }
-    });
-
-    // Populate forecast list
-    forecastEl.innerHTML = "";
-    forecastDays.forEach(day => {
+    days.forEach(i => {
+      const dayData = data.list[i * 8]; // approx. same time each day
+      const date = new Date(dayData.dt * 1000);
+      const options = { weekday: 'short' };
       const li = document.createElement("li");
-      li.textContent = `${day.day}: ${day.temp}°C`;
-      forecastEl.appendChild(li);
+      li.className = "forecast-day";
+      li.textContent = `${date.toLocaleDateString('en-US', options)}: ${Math.round(dayData.main.temp)}°C`;
+      forecastList.appendChild(li);
     });
-
   } catch (error) {
     console.error("Weather loading failed:", error);
-    currentTempEl.textContent = "--";
-    weatherDescEl.textContent = "Unable to load weather";
-    forecastEl.innerHTML = `<li>--</li><li>--</li><li>--</li>`;
+    weatherEl.innerHTML = `<p class="error">Unable to load weather data.</p>`;
+    forecastEl.innerHTML = "";
   }
 }
 
-getWeather();
+document.addEventListener("DOMContentLoaded", loadWeather);

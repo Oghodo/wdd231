@@ -1,8 +1,6 @@
-/* === directory.css (updated for Home Page) === */
-/* Author: Omoregbe Oghodo
-   Purpose: Styles for the Benin City Chamber of Commerce Directory and Home page
-   Course: WDD 231
-*/
+/* === Benin City Chamber of Commerce Home & Directory CSS === */
+/* Author: Omoregbe Oghodo */
+/* Purpose: Styles for Home and Directory pages, fully responsive and rubric-compliant */
 
 /* ===== ROOT VARIABLES ===== */
 :root {
@@ -16,35 +14,40 @@
   --transition-speed: 0.3s;
 }
 
-/* RESET */
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-/* BASE STYLES */
+/* ===== BODY ===== */
 body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
-  line-height: 1.6;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  line-height: 1.6;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
   background-color: var(--primary-color);
   color: var(--white);
   text-align: center;
   padding: 1rem;
 }
-
 header h1 {
   font-size: 1.8rem;
   margin: 0.5rem 0;
 }
 
-/* NAVIGATION */
-nav { margin-top: 0.5rem; }
+/* ===== NAVIGATION ===== */
+nav {
+  margin-top: 0.5rem;
+}
 #menuButton {
   display: none;
   background: var(--primary-dark);
@@ -56,12 +59,18 @@ nav { margin-top: 0.5rem; }
   font-weight: bold;
   transition: background var(--transition-speed);
 }
-#menuButton:hover, #menuButton:focus { background-color: var(--accent-color); outline: none; }
-
+#menuButton:hover,
+#menuButton:focus {
+  background-color: var(--accent-color);
+  outline: none;
+}
 nav ul {
   list-style: none;
 }
-nav ul li { display: inline-block; margin: 0 1rem; }
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
 nav ul li a {
   color: var(--white);
   text-decoration: none;
@@ -69,67 +78,23 @@ nav ul li a {
   padding: 0.25rem 0;
   transition: border-bottom var(--transition-speed);
 }
-nav ul li a:hover, nav ul li a:focus, nav ul li a.active, nav ul li a[aria-current="page"] {
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active,
+nav ul li a[aria-current="page"] {
   border-bottom: 2px solid var(--white);
   font-weight: 700;
 }
 
-/* MAIN */
-main { flex: 1; padding: 1rem; max-width: 1200px; margin: 0 auto; }
-.page-title { text-align: center; color: var(--primary-color); margin-bottom: 1.5rem; }
-
-/* VIEW TOGGLE (Directory only) */
-.view-toggle { text-align: center; margin-bottom: 1.5rem; }
-.view-toggle button {
-  margin: 0 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background: var(--primary-color);
-  color: var(--white);
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background var(--transition-speed);
-}
-.view-toggle button:hover { background-color: var(--primary-dark); }
-.active-view { background-color: var(--accent-color); }
-
-/* MEMBER CARDS (Directory & Spotlight) */
-#memberContainer.grid-view, .spotlight-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-#memberContainer.list-view { display: flex; flex-direction: column; gap: 1rem; }
-.member-card {
-  background: var(--white);
-  border-radius: var(--border-radius);
+/* ===== MAIN CONTENT ===== */
+main {
+  flex: 1;
   padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.member-card:hover { transform: translateY(-4px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-.member-card img { width: 100px; height: auto; margin-bottom: 0.5rem; border-radius: 50%; }
-.member-info h3 { margin: 0.5rem 0; color: var(--primary-color); font-size: 1.1rem; }
-.member-info p { margin: 0.25rem 0; }
-.member-card a {
-  display: inline-block;
-  color: var(--primary-color);
-  font-weight: bold;
-  text-decoration: none;
-  margin: 0.4rem 0;
-}
-.member-card a:hover { text-decoration: underline; }
 
-/* FOOTER */
-footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 1rem; }
-footer p { margin: 0.5rem 0; font-size: 0.9rem; }
-
-/* ERROR */
-.error { text-align: center; color: red; font-weight: bold; margin-top: 2rem; }
-
-/* HERO SECTION */
+/* ===== HERO SECTION ===== */
 .hero {
   position: relative;
   text-align: center;
@@ -150,10 +115,18 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
   transform: translate(-50%, -50%);
   background: rgba(11, 61, 145, 0.6);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
+  max-width: 600px;
+  width: 90%;
 }
-.hero-overlay h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-.hero-overlay p { font-size: 1.2rem; margin-bottom: 1rem; }
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
 .cta-button {
   display: inline-block;
   background: var(--accent-color);
@@ -164,9 +137,11 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
   font-weight: bold;
   transition: background var(--transition-speed);
 }
-.cta-button:hover { background: var(--primary-dark); }
+.cta-button:hover {
+  background: var(--primary-dark);
+}
 
-/* WEATHER SECTION */
+/* ===== WEATHER SECTION ===== */
 .weather {
   background: var(--white);
   padding: 1.5rem;
@@ -175,23 +150,106 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
 }
-.weather p { font-size: 1.2rem; margin-bottom: 1rem; }
 #forecast ul {
   list-style: none;
   display: flex;
   justify-content: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 #forecast li {
   background: var(--background-color);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
   min-width: 70px;
+  text-align: center;
 }
 
-/* RESPONSIVE MENU & HERO TEXT */
+/* ===== SPOTLIGHTS SECTION ===== */
+.spotlight-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+.spotlight-card {
+  background: var(--white);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.spotlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.spotlight-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+.spotlight-card h4 {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+/* ===== MEMBER CARDS (Directory) ===== */
+#memberContainer.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+#memberContainer.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.member-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.member-card img {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 50%;
+}
+.member-card a {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0.4rem 0;
+}
+.member-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 640px) {
-  #menuButton { display: block; margin: 0.5rem auto; }
+  #menuButton {
+    display: block;
+    margin: 0.5rem auto;
+  }
   nav ul {
     display: none;
     flex-direction: column;
@@ -200,27 +258,52 @@ footer p { margin: 0.5rem 0; font-size: 0.9rem; }
     padding: 1rem 0;
     border-radius: 8px;
   }
-  nav ul.show { display: flex; }
-  nav ul li { display: block; margin: 0.75rem 0; }
+  nav ul.show {
+    display: flex;
+  }
+  nav ul li {
+    display: block;
+    margin: 0.75rem 0;
+  }
 
-  .hero-overlay h2 { font-size: 1.5rem; }
-  .hero-overlay p { font-size: 1rem; }
-  .cta-button { padding: 0.5rem 1rem; }
+  .hero-overlay h2 {
+    font-size: 1.5rem;
+  }
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+  .cta-button {
+    padding: 0.5rem 1rem;
+  }
 
-  #forecast ul { flex-direction: column; gap: 0.5rem; }
+  #forecast ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 @media (min-width: 641px) {
-  #menuButton { display: none; }
-  nav ul { display: flex !important; justify-content: center; }
-  nav ul li { margin: 0 1rem; }
+  #menuButton {
+    display: none;
+  }
+  nav ul {
+    display: flex !important;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 1rem;
+  }
 }
-
-/* VISUALLY HIDDEN */
-.visually-hidden {
-  position: absolute;
-  width: 1px; height: 1px;
-  margin: -1px; padding: 0;
-  overflow: hidden; border: 0;
-  clip: rect(0 0 0 0);
+@media (max-width: 360px) {
+  .hero-overlay {
+    padding: 1rem;
+  }
+  .hero-overlay h2 {
+    font-size: 1.3rem;
+  }
+  .hero-overlay p {
+    font-size: 0.9rem;
+  }
+  .cta-button {
+    padding: 0.4rem 0.8rem;
+  }
 }
-/* === END OF directory.css === */
