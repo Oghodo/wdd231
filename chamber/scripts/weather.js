@@ -11,6 +11,11 @@ const apiKey = "665909e134db00277279afaabddd1662";
 const city = "Benin City, NG";
 const units = "metric"; // Celsius
 
+/* ===== UTILITY FUNCTION ===== */
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 /* ===== LOAD WEATHER FUNCTION ===== */
 async function loadWeather() {
   try {
@@ -28,22 +33,27 @@ async function loadWeather() {
     const weatherDescElem = document.getElementById("weather-desc");
 
     if (currentTempElem) currentTempElem.textContent = `${Math.round(current.main.temp)}°C`;
-    if (weatherDescElem) weatherDescElem.textContent = current.weather[0].description;
+    if (weatherDescElem) weatherDescElem.textContent = capitalize(current.weather[0].description);
 
     // ===== 3-DAY FORECAST =====
     const forecastList = forecastEl.querySelector("ul");
     if (forecastList) forecastList.innerHTML = "";
 
-    const days = [1, 2, 3]; // next 3 days
-    days.forEach(i => {
-      const dayData = data.list[i * 8]; // approx. same time each day
+    // Use approximate midday data for next 3 days
+    const dayIndices = [8, 16, 24]; // roughly 24h intervals (3-hour increments)
+    dayIndices.forEach(i => {
+      const dayData = data.list[i];
+      if (!dayData) return;
+
       const date = new Date(dayData.dt * 1000);
-      const options = { weekday: 'short' };
+      const options = { weekday: "short" };
 
       const li = document.createElement("li");
       li.className = "forecast-day";
-      li.textContent = `${date.toLocaleDateString('en-US', options)}: ${Math.round(dayData.main.temp)}°C`;
-
+      li.innerHTML = `
+        <strong>${date.toLocaleDateString("en-US", options)}:</strong> 
+        ${Math.round(dayData.main.temp)}°C, ${capitalize(dayData.weather[0].description)}
+      `;
       forecastList.appendChild(li);
     });
 
