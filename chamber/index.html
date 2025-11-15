@@ -47,42 +47,53 @@
   <main>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" aria-label="Hero banner">
       <img src="images/hero-banner.jpg" alt="Aerial view of Benin City" class="hero-img">
       <div class="hero-overlay">
         <h2>Building a Stronger Business Community</h2>
         <p>Join the Benin City Chamber of Commerce and grow with us!</p>
-        <a href="join.html" class="cta-button">Join the Chamber</a>
+        <a href="join.html" class="cta-button" aria-label="Join the Benin City Chamber of Commerce">Join the Chamber</a>
       </div>
     </section>
 
-    <!-- CURRENT EVENTS -->
-    <section class="events" aria-label="Upcoming events">
-      <h2>Upcoming Events</h2>
+    <!-- UPCOMING EVENTS -->
+    <section class="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Upcoming Events</h2>
       <ul>
-        <li><strong>Business Networking Night:</strong> November 25, 2025 — Benin Royal Hall.</li>
-        <li><strong>Entrepreneurship Summit:</strong> December 12, 2025 — Uniben Main Auditorium.</li>
+        <li>
+          <article>
+            <h3>Business Networking Night</h3>
+            <time datetime="2025-11-25">November 25, 2025</time> — Benin Royal Hall
+          </article>
+        </li>
+        <li>
+          <article>
+            <h3>Entrepreneurship Summit</h3>
+            <time datetime="2025-12-12">December 12, 2025</time> — Uniben Main Auditorium
+          </article>
+        </li>
       </ul>
     </section>
 
     <!-- WEATHER SECTION -->
-    <section class="weather" aria-label="Current weather">
-      <h2>Current Weather</h2>
-      <div id="weather">
+    <section class="weather" aria-labelledby="weather-heading">
+      <h2 id="weather-heading">Current Weather</h2>
+      <div id="weather" role="region" aria-live="polite">
         <p><span id="current-temp">--</span> | <span id="weather-desc">Loading...</span></p>
       </div>
       <div id="forecast">
         <ul>
-          <li class="forecast-day">Mon: --°C</li>
-          <li class="forecast-day">Tue: --°C</li>
-          <li class="forecast-day">Wed: --°C</li>
+            <li class="forecast-day">Mon: --°C</li>
+            <li class="forecast-day">Tue: --°C</li>
+            <li class="forecast-day">Wed: --°C</li>
+
         </ul>
       </div>
     </section>
 
     <!-- COMPANY SPOTLIGHTS -->
-    <section class="spotlights" aria-label="Member spotlights">
-      <h2>Member Spotlights</h2>
+    <section class="spotlights" aria-labelledby="spotlights-heading">
+      <h2 id="spotlights-heading">Member Spotlights</h2>
       <div id="spotlights" class="spotlight-container" aria-live="polite">
         <!-- Spotlights loaded via JS -->
       </div>
@@ -100,5 +111,6 @@
   <script src="scripts/directory.js" defer></script>
   <script src="scripts/weather.js" defer></script>
   <script src="scripts/spotlights.js" defer></script>
+
 </body>
 </html>

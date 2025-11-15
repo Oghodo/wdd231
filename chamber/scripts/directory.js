@@ -29,6 +29,7 @@ if (menuButton && navMenu) {
     navMenu.classList.toggle("show");
     navMenu.setAttribute("aria-hidden", isExpanded);
 
+    // Move focus to first menu link when opening
     if (!isExpanded && firstNavLink) firstNavLink.focus();
   });
 
@@ -48,6 +49,23 @@ if (menuButton && navMenu) {
       menuButton.setAttribute("aria-expanded", "false");
       navMenu.setAttribute("aria-hidden", "true");
       menuButton.focus();
+    }
+  });
+
+  // Keyboard navigation support (Tab wrapping)
+  navMenu.addEventListener("keydown", (event) => {
+    const focusableLinks = navMenu.querySelectorAll("a");
+    const firstLink = focusableLinks[0];
+    const lastLink = focusableLinks[focusableLinks.length - 1];
+
+    if (event.key === "Tab") {
+      if (event.shiftKey && document.activeElement === firstLink) {
+        event.preventDefault();
+        lastLink.focus();
+      } else if (!event.shiftKey && document.activeElement === lastLink) {
+        event.preventDefault();
+        firstLink.focus();
+      }
     }
   });
 }
