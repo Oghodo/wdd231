@@ -113,11 +113,15 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(11, 61, 145, 0.6);
+  background: rgba(11, 61, 145, 0.85); /* increased opacity for better contrast */
   padding: 2rem;
   border-radius: var(--border-radius);
   max-width: 600px;
   width: 90%;
+}
+.hero-overlay h2,
+.hero-overlay p {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* improves readability */
 }
 .hero-overlay h2 {
   font-size: 2rem;
