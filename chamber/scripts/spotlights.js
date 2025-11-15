@@ -1,30 +1,32 @@
-/* === spotlights.js ===
+/* ==============================================
+   spotlights.js
    Benin City Chamber of Commerce Member Spotlights
    Displays 2–3 random Gold/Silver members from members.json
    Author: Omoregbe Oghodo
-*/
+============================================== */
 
 const spotlightsContainer = document.getElementById("spotlights");
 
+/* ===== LOAD SPOTLIGHTS FUNCTION ===== */
 async function loadSpotlights() {
   try {
     const response = await fetch("data/members.json");
     if (!response.ok) throw new Error("Network response was not ok");
+
     const members = await response.json();
 
-    // Filter only Silver (2) and Gold (3) members
-    const filtered = members.filter(m => m.membershipLevel === 2 || m.membershipLevel === 3);
+    // ===== FILTER Gold & Silver Members =====
+    const filtered = members.filter(member => member.membershipLevel === 2 || member.membershipLevel === 3);
 
-    // Shuffle array
+    // ===== SHUFFLE & SELECT 2–3 MEMBERS =====
     const shuffled = filtered.sort(() => 0.5 - Math.random());
+    const selectedCount = Math.floor(Math.random() * 2) + 2; // 2 or 3 members
+    const selected = shuffled.slice(0, selectedCount);
 
-    // Pick 2–3 members
-    const selected = shuffled.slice(0, Math.floor(Math.random() * 2) + 2);
+    // ===== CLEAR EXISTING CONTENT =====
+    if (spotlightsContainer) spotlightsContainer.innerHTML = "";
 
-    // Clear container
-    spotlightsContainer.innerHTML = "";
-
-    // Add spotlight cards
+    // ===== CREATE & APPEND SPOTLIGHT CARDS =====
     selected.forEach(member => {
       const card = document.createElement("div");
       card.className = "spotlight-card";
@@ -39,11 +41,14 @@ async function loadSpotlights() {
       `;
       spotlightsContainer.appendChild(card);
     });
+
   } catch (error) {
     console.error("Spotlight loading failed:", error);
-    spotlightsContainer.innerHTML = `<p class="error">Unable to load member spotlights right now.</p>`;
+    if (spotlightsContainer) {
+      spotlightsContainer.innerHTML = `<p class="error">Unable to load member spotlights right now.</p>`;
+    }
   }
 }
 
-// Load on page ready
+/* ===== INITIALIZE SPOTLIGHTS ===== */
 document.addEventListener("DOMContentLoaded", loadSpotlights);

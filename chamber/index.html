@@ -24,8 +24,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/directory.css">
   <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/directory.css">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
     <nav id="mainNav" aria-label="Main navigation">
       <button id="menuButton" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation menu">☰ Menu</button>
       <ul id="navMenu">
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
         <li><a href="directory.html">Directory</a></li>
         <li><a href="join.html">Join</a></li>
         <li><a href="discover.html">Discover</a></li>
@@ -46,7 +46,7 @@
   <!-- MAIN -->
   <main role="main">
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <img src="images/hero-banner.jpg" alt="Aerial view of Benin City" class="hero-img">
       <div class="hero-overlay">
@@ -57,7 +57,7 @@
     </section>
 
     <!-- CURRENT EVENTS -->
-    <section class="events">
+    <section class="events" aria-label="Upcoming events">
       <h2>Upcoming Events</h2>
       <ul>
         <li><strong>Business Networking Night:</strong> November 25, 2025 — Benin Royal Hall.</li>
@@ -65,8 +65,8 @@
       </ul>
     </section>
 
-    <!-- WEATHER -->
-    <section class="weather">
+    <!-- WEATHER SECTION -->
+    <section class="weather" aria-label="Current weather">
       <h2>Current Weather</h2>
       <div id="weather">
         <p><span id="current-temp">--</span> | <span id="weather-desc">Loading...</span></p>
@@ -81,7 +81,7 @@
     </section>
 
     <!-- COMPANY SPOTLIGHTS -->
-    <section class="spotlights">
+    <section class="spotlights" aria-label="Member spotlights">
       <h2>Member Spotlights</h2>
       <div id="spotlights" class="spotlight-container" aria-live="polite">
         <!-- Spotlights loaded via JS -->
