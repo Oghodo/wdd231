@@ -5,9 +5,9 @@
 
 /* ===== ROOT VARIABLES ===== */
 :root {
-  --primary-color: #0b3d91;
-  --primary-dark: #092c6a;
-  --accent-color: #004aad;
+  --primary-color: #fbfbfc;
+  --primary-dark: #e4e6eb;
+  --accent-color: #eaedf1;
   --background-color: #f4f6f8;
   --text-color: #222;
   --white: #fff;
