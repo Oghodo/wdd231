@@ -1,0 +1,67 @@
+/* === Global Styles === */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== Main Container ===== */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+}
+
+/* ===== Thank You Message Box ===== */
+#thankyouMessage {
+    background: #fff;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#thankyouMessage p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #0b3d91; /* dark blue text for good contrast */
+}
+
+#thankyouMessage strong {
+    color: #004aad;
+}
+
+/* ===== Headings ===== */
+h2 {
+    color: #0b3d91;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+footer span {
+    font-weight: bold;
+}
+
+/* ===== Responsive Layout ===== */
+@media (min-width: 768px) {
+    main {
+        gap: 2.5rem;
+        padding: 2rem;
+    }
+
+    #thankyouMessage {
+        padding: 2rem 2.5rem;
+    }
+}

@@ -1,31 +1,43 @@
+/* === Root Variables === */
+:root {
+    --primary-color: #0b3d91;
+    --primary-dark: #092c6a;
+    --accent-color: #004aad;
+    --background-color: #f4f6f8;
+    --text-color: #222;
+    --card-bg: #fff;
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+}
+
 /* === Global Styles === */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #2c8be9;
-    color: #93b5e0;
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
 
-/* ===== Main Container ===== */
+/* === Main Container === */
 main {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 2rem;
     max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 1.5rem auto;
+    padding: 1rem;
 }
 
-/* ===== Form Styles ===== */
+/* === Form Styles === */
 form {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    background: #5aabec;
-    padding: 20px;
-    border-radius: 10px;
+    gap: 1rem;
+    background: #e9f0f8; /* lighter for contrast */
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
@@ -36,39 +48,41 @@ label {
 }
 
 input, textarea, select {
-    padding: 10px;
-    margin-top: 5px;
+    padding: 0.75rem;
+    margin-top: 0.25rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1rem;
+    background-color: #fff;
+    color: var(--text-color);
 }
 
 input[type="submit"] {
-    background-color: #0b3d91;
+    background-color: var(--primary-color);
     color: #fff;
     cursor: pointer;
     border: none;
-    transition: background 0.3s;
+    transition: background var(--transition-speed);
     font-weight: bold;
 }
 
 input[type="submit"]:hover {
-    background-color: #092c6a;
+    background-color: var(--primary-dark);
 }
 
-/* ===== Membership Cards ===== */
+/* === Membership Cards === */
 .membership-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.5rem;
 }
 
 .card {
     flex: 1;
     min-width: 200px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: center;
     opacity: 0;
@@ -82,10 +96,10 @@ input[type="submit"]:hover {
 .card:nth-child(4) { animation-delay: 0.8s; }
 
 .card button {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
     border: none;
-    background: #004aad;
+    background: var(--accent-color);
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
@@ -100,7 +114,7 @@ input[type="submit"]:hover {
     }
 }
 
-/* ===== Modal Styles ===== */
+/* === Modal Styles === */
 .modal {
     display: none;
     position: fixed;
@@ -115,9 +129,9 @@ input[type="submit"]:hover {
 }
 
 .modal-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
     max-width: 400px;
     text-align: left;
     position: relative;
@@ -125,8 +139,8 @@ input[type="submit"]:hover {
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 0.5rem;
+    right: 0.5rem;
     cursor: pointer;
     font-weight: bold;
     background: none;
@@ -134,11 +148,11 @@ input[type="submit"]:hover {
     font-size: 1.2rem;
 }
 
-/* ===== Responsive Layout ===== */
+/* === Responsive Layout === */
 @media (min-width: 768px) {
     main {
         flex-direction: row;
-        gap: 20px;
+        gap: 1.5rem;
     }
     form {
         flex: 2;
@@ -150,13 +164,14 @@ input[type="submit"]:hover {
     }
 }
 
-/* ===== Optional Headings / Text ===== */
+/* === Headings / Text === */
 h2 {
-    color: #0b9174;
+    color: var(--primary-color);
     text-align: center;
 }
 
 p {
-    margin: 10px 0;
+    margin: 0.5rem 0;
     font-size: 1rem;
+    color: var(--text-color);
 }
