@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the Chamber</title>
+<link rel="stylesheet" href="styles/join.css">
+</head>
+<body>
+
+<!-- ===== HEADER / NAVIGATION ===== -->
+<header>
+    <h1>Benin City Chamber of Commerce</h1>
+    <nav id="mainNav" aria-label="Main navigation">
+      <button id="menuButton" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
+      <ul id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Membership Form -->
+    <form method="get" action="thankyou.html">
+        <label>
+            First Name:
+            <input type="text" name="firstName" title="Enter your first name" autocomplete="given-name" required>
+        </label>
+        <label>
+            Last Name:
+            <input type="text" name="lastName" title="Enter your last name" autocomplete="family-name" required>
+        </label>
+        <label>
+            Title:
+            <input type="text" name="title" title="Enter your organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+        </label>
+        <label>
+            Email:
+            <input type="email" name="email" title="Enter your email address" autocomplete="email" required placeholder="you@example.com">
+        </label>
+        <label>
+            Mobile Phone:
+            <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+        </label>
+        <label>
+            Business/Organization Name:
+            <input type="text" name="organization" title="Enter your business/organization name" autocomplete="organization" required>
+        </label>
+        <label>
+            Business Description:
+            <textarea name="description" title="Describe your business or organization"></textarea>
+        </label>
+        <input type="hidden" id="timestamp" name="timestamp">
+        <input type="submit" value="Submit Membership">
+    </form>
+
+    <!-- Membership Level Cards -->
+    <div class="membership-cards">
+        <div class="card">
+            <h3>NP Membership</h3>
+            <button data-modal="npModal" aria-label="View NP Membership Benefits">View Benefits</button>
+        </div>
+        <div class="card">
+            <h3>Bronze Membership</h3>
+            <button data-modal="bronzeModal" aria-label="View Bronze Membership Benefits">View Benefits</button>
+        </div>
+        <div class="card">
+            <h3>Silver Membership</h3>
+            <button data-modal="silverModal" aria-label="View Silver Membership Benefits">View Benefits</button>
+        </div>
+        <div class="card">
+            <h3>Gold Membership</h3>
+            <button data-modal="goldModal" aria-label="View Gold Membership Benefits">View Benefits</button>
+        </div>
+    </div>
+</main>
+
+<!-- Modals -->
+<div id="npModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="npTitle">
+    <div class="modal-content">
+        <button class="close" aria-label="Close NP Modal">&times;</button>
+        <h4 id="npTitle">NP Membership Benefits</h4>
+        <p>No fee. Access to community events, newsletters, and support.</p>
+    </div>
+</div>
+
+<div id="bronzeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bronzeTitle">
+    <div class="modal-content">
+        <button class="close" aria-label="Close Bronze Modal">&times;</button>
+        <h4 id="bronzeTitle">Bronze Membership Benefits</h4>
+        <p>Includes NP benefits plus event discounts, advertising, and training sessions.</p>
+    </div>
+</div>
+
+<div id="silverModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="silverTitle">
+    <div class="modal-content">
+        <button class="close" aria-label="Close Silver Modal">&times;</button>
+        <h4 id="silverTitle">Silver Membership Benefits</h4>
+        <p>Includes Bronze benefits plus premium advertising, spotlight features, and more events.</p>
+    </div>
+</div>
+
+<div id="goldModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="goldTitle">
+    <div class="modal-content">
+        <button class="close" aria-label="Close Gold Modal">&times;</button>
+        <h4 id="goldTitle">Gold Membership Benefits</h4>
+        <p>All Silver benefits plus VIP events, advanced training, and priority support.</p>
+    </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
+    <p id="lastModified"></p>
+</footer>
+
+<script src="scripts/join.js"></script>
+</body>
+</html>
