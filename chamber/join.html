@@ -3,30 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join the Chamber</title>
-<meta name="description" content="Join and connect with our communities for growth.">  
+<title>Join the Chamber | Benin City Chamber of Commerce</title>
+<meta name="description" content="Join the Benin City Chamber of Commerce and connect with our community for growth, networking, and business support.">
 <meta name="author" content="Omoregbe Oghodo">
 <meta name="theme-color" content="#004aad">
 
 <!-- Open Graph -->
-  <meta property="og:title" content="Benin City Chamber of Commerce Directory">
-  <meta property="og:description" content="Explore verified businesses, organizations, and entrepreneurs in Benin City.">
-  <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/og-image.jpg">
-  <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/directory.html">
-  <meta property="og:type" content="website">
+<meta property="og:title" content="Benin City Chamber of Commerce Join Page">
+<meta property="og:description" content="Join verified businesses, organizations, and entrepreneurs in Benin City.">
+<meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/og-image.jpg">
+<meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/join.html">
+<meta property="og:type" content="website">
 
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+<!-- Favicon -->
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-   <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/directory.css">
-  <link rel="stylesheet" href="styles/join.css">
+<!-- Stylesheet -->
+<link rel="stylesheet" href="styles/join.css">
+<link rel="stylesheet" href="styles/directory.css">
 </head>
 <body>
 
@@ -46,7 +45,6 @@
     </nav>
 </header>
 
-<!--MAIN-->
 <main>
     <!-- Membership Form -->
     <form method="get" action="thankyou.html">
@@ -75,6 +73,16 @@
             <input type="text" name="organization" title="Enter your business/organization name" autocomplete="organization" required>
         </label>
         <label>
+            Membership Level:
+            <select name="membership" title="Select your membership level" required>
+                <option value="">--Select Level--</option>
+                <option value="np">NP</option>
+                <option value="bronze">Bronze</option>
+                <option value="silver">Silver</option>
+                <option value="gold">Gold</option>
+            </select>
+        </label>
+        <label>
             Business Description:
             <textarea name="description" title="Describe your business or organization"></textarea>
         </label>
@@ -86,52 +94,49 @@
     <div class="membership-cards">
         <div class="card">
             <h3>NP Membership</h3>
-            <button data-modal="npModal" aria-label="View NP Membership Benefits">View Benefits</button>
+            <button data-modal="npModal">View Benefits</button>
         </div>
         <div class="card">
             <h3>Bronze Membership</h3>
-            <button data-modal="bronzeModal" aria-label="View Bronze Membership Benefits">View Benefits</button>
+            <button data-modal="bronzeModal">View Benefits</button>
         </div>
         <div class="card">
             <h3>Silver Membership</h3>
-            <button data-modal="silverModal" aria-label="View Silver Membership Benefits">View Benefits</button>
+            <button data-modal="silverModal">View Benefits</button>
         </div>
         <div class="card">
             <h3>Gold Membership</h3>
-            <button data-modal="goldModal" aria-label="View Gold Membership Benefits">View Benefits</button>
+            <button data-modal="goldModal">View Benefits</button>
         </div>
     </div>
 </main>
 
 <!-- Modals -->
-<div id="npModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="npTitle">
+<div id="npModal" class="modal">
     <div class="modal-content">
-        <button class="close" aria-label="Close NP Modal">&times;</button>
-        <h4 id="npTitle">NP Membership Benefits</h4>
+        <button class="close">&times;</button>
+        <h4>NP Membership Benefits</h4>
         <p>No fee. Access to community events, newsletters, and support.</p>
     </div>
 </div>
-
-<div id="bronzeModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="bronzeTitle">
+<div id="bronzeModal" class="modal">
     <div class="modal-content">
-        <button class="close" aria-label="Close Bronze Modal">&times;</button>
-        <h4 id="bronzeTitle">Bronze Membership Benefits</h4>
+        <button class="close">&times;</button>
+        <h4>Bronze Membership Benefits</h4>
         <p>Includes NP benefits plus event discounts, advertising, and training sessions.</p>
     </div>
 </div>
-
-<div id="silverModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="silverTitle">
+<div id="silverModal" class="modal">
     <div class="modal-content">
-        <button class="close" aria-label="Close Silver Modal">&times;</button>
-        <h4 id="silverTitle">Silver Membership Benefits</h4>
+        <button class="close">&times;</button>
+        <h4>Silver Membership Benefits</h4>
         <p>Includes Bronze benefits plus premium advertising, spotlight features, and more events.</p>
     </div>
 </div>
-
-<div id="goldModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="goldTitle">
+<div id="goldModal" class="modal">
     <div class="modal-content">
-        <button class="close" aria-label="Close Gold Modal">&times;</button>
-        <h4 id="goldTitle">Gold Membership Benefits</h4>
+        <button class="close">&times;</button>
+        <h4>Gold Membership Benefits</h4>
         <p>All Silver benefits plus VIP events, advanced training, and priority support.</p>
     </div>
 </div>
@@ -142,6 +147,7 @@
     <p id="lastModified"></p>
 </footer>
 
-<script src="scripts/join.js"></script>
+<!-- Scripts -->
+<script src="scripts/join.js" defer></script>
 </body>
 </html>

@@ -1,8 +1,8 @@
 /* === Global Styles === */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #222;
+    background-color: #2c8be9;
+    color: #93b5e0;
     margin: 0;
     padding: 0;
 }
@@ -23,7 +23,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    background: #fff;
+    background: #5aabec;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -152,7 +152,7 @@ input[type="submit"]:hover {
 
 /* ===== Optional Headings / Text ===== */
 h2 {
-    color: #0b3d91;
+    color: #0b9174;
     text-align: center;
 }
 

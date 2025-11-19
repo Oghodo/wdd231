@@ -6,7 +6,6 @@ if (timestampInput) {
 
 // ===== Modal functionality =====
 const modalButtons = document.querySelectorAll('.card button');
-const modals = document.querySelectorAll('.modal');
 const closeButtons = document.querySelectorAll('.close');
 
 modalButtons.forEach(btn => {
@@ -46,6 +45,9 @@ if (thankyouMessage) {
         <strong>Email:</strong> ${params.get('email')}<br>
         <strong>Mobile:</strong> ${params.get('phone')}<br>
         <strong>Business/Organization Name:</strong> ${params.get('organization')}<br>
+        <strong>Membership Level:</strong> ${params.get('membership')}<br>
+        <strong>Business Description:</strong> ${params.get('description')}<br>
         <strong>Submitted At:</strong> ${params.get('timestamp')}
     `;
 }
+// ===== End of script =====//
