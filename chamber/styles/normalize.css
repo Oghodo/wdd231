@@ -1,9 +1,8 @@
 /* === normalize.css === */
-/* Modern Normalize v2 (Simplified for Class Use)
-   ------------------------------------------------
-   Purpose: Reset default browser styles for consistent
-   rendering across different browsers.
---------------------------------------------------- */
+/* Modern Normalize – Cleaned & Optimized for WDD231
+   -------------------------------------------------
+   Ensures consistent styling across browsers.
+---------------------------------------------------- */
 
 /* Root Elements */
 html {
@@ -11,12 +10,14 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
-/* Base Styles */
+/* Base */
 body {
   margin: 0;
+  padding: 0;
+  font-family: inherit;
 }
 
-/* Structural Elements */
+/* Structural */
 main {
   display: block;
 }
@@ -25,21 +26,24 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  font-weight: bold;
 }
 
-/* Horizontal Rule */
+/* HR */
 hr {
+  box-sizing: content-box;
   height: 0;
-  color: inherit;
+  border: none;
 }
 
 /* Links */
 a {
   background-color: transparent;
   text-decoration: none;
+  color: inherit;
 }
 
-/* Text Formatting */
+/* Strong Text */
 b,
 strong {
   font-weight: bolder;
@@ -50,13 +54,30 @@ img {
   border-style: none;
   max-width: 100%;
   height: auto;
+  display: block; /* FIXED: removes inline gap issues */
 }
 
-/* Form Elements */
+/* Buttons & Inputs */
 button,
-input {
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
+  border: none; /* FIXED: avoids inconsistent browser defaults */
+  background: none;
+}
+
+/* Buttons specifically */
+button {
+  cursor: pointer;
+}
+
+/* General Box-Sizing Normalization */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
