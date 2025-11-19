@@ -1,120 +1,141 @@
-/* === Root Variables === */
+/* ===== Root Variables ===== */
 :root {
     --primary-color: #0b3d91;
-    --primary-dark: #4779cf;
+    --primary-dark: #092c6a;
     --accent-color: #004aad;
-    --background-color: #1e60a1;
-    --text-color: #222;
-    --card-bg: #ffffff;
+    --background-color: #f4f6f8;
+    --text-color: #0d1f3a; /* Darkened for AA contrast */
+    --white: #fff;
     --border-radius: 10px;
     --transition-speed: 0.3s;
 }
 
-/* === Global Styles === */
-body {
-    font-family: "Roboto", Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
+/* ===== Global Styles ===== */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* === Main Container === */
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 main {
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 1.5rem auto;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: 1200px;
-    margin: 1.5rem auto;
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav a {
+    color: var(--white);
+    font-weight: bold;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    text-align: center;
     padding: 1rem;
 }
 
-/* === Form Styles === */
+/* ===== Form Styles ===== */
 form {
-    flex: 1;
+    background-color: #e2e8f0;
+    padding: 2rem;
+    border-radius: var(--border-radius);
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: #b8cce2; /* lighter for contrast */
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-}
-
-input, textarea, select {
-    padding: 0.75rem;
-    margin-top: 0.25rem;
-    border-radius: 5px;
-    border: 1px solid #b8dbe9;
-    font-size: 1rem;
-    background-color: #aecce6;
     color: var(--text-color);
 }
 
-input[type="submit"] {
-    background-color: var(--primary-color);
-    color: #70dfee;
-    cursor: pointer;
-    border: none;
-    transition: background var(--transition-speed);
+form label {
     font-weight: bold;
 }
 
-input[type="submit"]:hover {
+form input,
+form select,
+form textarea {
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+form input[type="submit"],
+form button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+}
+
+form input[type="submit"]:hover,
+form button:hover {
     background-color: var(--primary-dark);
 }
 
-/* === Membership Cards === */
-.membership-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
+/* ===== Card Styles ===== */
 .card {
-    flex: 1;
-    min-width: 200px;
-    background: var(--card-bg);
+    background-color: var(--white);
     border-radius: var(--border-radius);
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: var(--text-color); /* Dark text for AA contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 1s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.4s; }
-.card:nth-child(3) { animation-delay: 0.6s; }
-.card:nth-child(4) { animation-delay: 0.8s; }
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
 
 .card button {
-    margin-top: 0.75rem;
-    padding: 0.75rem;
-    border: none;
-    background: var(--accent-color);
-    color: #94c7e4;
-    cursor: pointer;
-    border-radius: 5px;
-    font-weight: bold;
+    margin-top: 1rem;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* === Modal Styles === */
+/* ===== Modal Styles ===== */
 .modal {
     display: none;
     position: fixed;
@@ -122,56 +143,43 @@ input[type="submit"]:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
+    padding: 1rem;
     z-index: 1000;
 }
 
 .modal-content {
-    background: var(--card-bg);
-    padding: 1.5rem;
+    background-color: var(--white);
+    padding: 2rem;
     border-radius: var(--border-radius);
-    max-width: 400px;
-    text-align: left;
+    max-width: 600px;
+    width: 100%;
     position: relative;
 }
 
 .close {
     position: absolute;
     top: 0.5rem;
-    right: 0.5rem;
+    right: 1rem;
+    font-size: 1.5rem;
     cursor: pointer;
-    font-weight: bold;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
 }
 
-/* === Responsive Layout === */
-@media (min-width: 768px) {
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
     main {
-        flex-direction: row;
+        padding: 1rem;
         gap: 1.5rem;
     }
-    form {
-        flex: 2;
-    }
-    .membership-cards {
-        flex: 1;
-        margin-top: 0;
-        flex-direction: column;
-    }
-}
 
-/* === Headings / Text === */
-h2 {
-    color: var(--primary-color);
-    text-align: center;
-}
-
-p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: var(--text-color);
+    .card {
+        padding: 1rem;
+    }
 }
