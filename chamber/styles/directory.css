@@ -129,7 +129,7 @@ main {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(11, 61, 145, 0.78);
+  background: rgb(251, 253, 253);
   display: flex;
   justify-content: center;
   flex-direction: column;
