@@ -1,11 +1,11 @@
 /* === Root Variables === */
 :root {
     --primary-color: #0b3d91;
-    --primary-dark: #092c6a;
+    --primary-dark: #4779cf;
     --accent-color: #004aad;
-    --background-color: #f4f6f8;
+    --background-color: #1e60a1;
     --text-color: #222;
-    --card-bg: #fff;
+    --card-bg: #ffffff;
     --border-radius: 10px;
     --transition-speed: 0.3s;
 }
@@ -35,7 +35,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background: #e9f0f8; /* lighter for contrast */
+    background: #b8cce2; /* lighter for contrast */
     padding: 1.5rem;
     border-radius: var(--border-radius);
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -51,15 +51,15 @@ input, textarea, select {
     padding: 0.75rem;
     margin-top: 0.25rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #b8dbe9;
     font-size: 1rem;
-    background-color: #fff;
+    background-color: #aecce6;
     color: var(--text-color);
 }
 
 input[type="submit"] {
     background-color: var(--primary-color);
-    color: #fff;
+    color: #70dfee;
     cursor: pointer;
     border: none;
     transition: background var(--transition-speed);
@@ -100,7 +100,7 @@ input[type="submit"]:hover {
     padding: 0.75rem;
     border: none;
     background: var(--accent-color);
-    color: #fff;
+    color: #94c7e4;
     cursor: pointer;
     border-radius: 5px;
     font-weight: bold;
