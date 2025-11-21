@@ -1,26 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Discover Benin City – Top Attractions, Culture & Landmarks</title>
-  <meta name="description" content="Explore Benin City's top attractions, culture, history, markets, and natural sites. Discover why Benin City is a vibrant destination for visitors and businesses.">
+  <title>Discover Benin City — Chamber Attractions & Culture</title>
+  <meta name="description" content="Explore Benin City's top attractions, cultural sites, historic landmarks, and markets for visitors and businesses.">
   <meta name="author" content="Omoregbe Oghodo">
   <meta name="theme-color" content="#004aad">
 
-  <!-- Open Graph (absolute URLs) -->
-  <meta property="og:title" content="Discover Benin City – Top Attractions, Culture & Landmarks">
-  <meta property="og:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Discover Benin City — Chamber Attractions & Culture">
+  <meta property="og:description" content="Explore Benin City's top attractions, cultural sites, historic landmarks, and markets for visitors and businesses.">
   <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg">
   <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/discover.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
 
-  <!-- Twitter card -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Discover Benin City – Top Attractions, Culture & Landmarks">
-  <meta name="twitter:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer.">
+  <meta name="twitter:title" content="Discover Benin City — Chamber Attractions & Culture">
+  <meta name="twitter:description" content="Explore Benin City's top attractions, cultural sites, historic landmarks, and markets for visitors and businesses.">
   <meta name="twitter:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg">
 
   <!-- Favicon -->
@@ -37,10 +37,9 @@
 </head>
 
 <body>
-  <!-- Header (branding + nav; no h1 here to satisfy validator rules) -->
+  <!-- Header with branding + nav -->
   <header>
     <div class="brand" aria-hidden="true">Benin City Chamber of Commerce</div>
-
     <nav aria-label="Primary">
       <ul>
         <li><a href="index.html" title="Home page">Home</a></li>
@@ -52,18 +51,18 @@
   </header>
 
   <main class="discover-grid">
-    <!-- Primary page heading (single h1 required inside main) -->
+    <!-- Page Heading -->
     <h1 id="pageTitle">Benin City Chamber of Commerce — Discover</h1>
 
-    <!-- Visitor Message (localStorage will populate) -->
+    <!-- Visitor Message -->
     <section id="visitor-message" aria-live="polite" class="visitor-msg">
       <h2 class="visually-hidden">Visitor Message</h2>
-      <!-- populated by scripts/discover.js -->
+      <!-- Populated by scripts/discover.js -->
     </section>
 
-    <!-- Cards container (cards generated via JSON + JS) -->
+    <!-- Cards Container -->
     <section class="cards-container" id="cards-container" aria-label="Points of interest in Benin City">
-      <!-- dynamic content -->
+      <!-- Dynamic content from JS -->
     </section>
   </main>
 
@@ -72,7 +71,7 @@
     <p id="lastModified" aria-hidden="true"></p>
   </footer>
 
-  <!-- JavaScript (module) -->
+  <!-- JavaScript -->
   <script type="module" src="scripts/discover.js"></script>
 </body>
 </html>
