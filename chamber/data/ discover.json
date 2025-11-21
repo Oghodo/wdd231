@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Benin City National Museum",
+    "address": "Kings Square, Benin City, Nigeria",
+    "description": "Explore the art, history, and culture of the Edo people at the National Museum.",
+    "image": "museum.webp",
+    "link": "#"
+  },
+  {
+    "name": "Oba Palace",
+    "address": "Ring Road, Benin City, Nigeria",
+    "description": "The royal palace of the Oba of Benin, showcasing traditional architecture and artifacts.",
+    "image": "palace.webp",
+    "link": "#"
+  },
+  {
+    "name": "Emotan Statue",
+    "address": "Sapele Road, Benin City",
+    "description": "A historic statue commemorating Emotan, a heroine of Benin City.",
+    "image": "emotan.webp",
+    "link": "#"
+  },
+  {
+    "name": "Igun Street Art Market",
+    "address": "Igun Street, Benin City",
+    "description": "Famous for bronze casting and local art workshops.",
+    "image": "igun.webp",
+    "link": "#"
+  },
+  {
+    "name": "Okomu National Park",
+    "address": "Okomu, Edo State",
+    "description": "A wildlife sanctuary and tropical rainforest for nature lovers.",
+    "image": "okomu.webp",
+    "link": "#"
+  },
+  {
+    "name": "Benin Moat",
+    "address": "Various locations around Benin City",
+    "description": "Historic earthworks and defensive walls of the old Benin Kingdom.",
+    "image": "moat.webp",
+    "link": "#"
+  },
+  {
+    "name": "Edo Cultural Centre",
+    "address": "Ring Road, Benin City",
+    "description": "Cultural exhibitions, workshops, and performances celebrating Edo heritage.",
+    "image": "cultural_centre.webp",
+    "link": "#"
+  },
+  {
+    "name": "Oba Market",
+    "address": "Oba Market Rd, Benin City",
+    "description": "Bustling local market with food, crafts, and traditional goods.",
+    "image": "oba_market.webp",
+    "link": "#"
+  }
+]
