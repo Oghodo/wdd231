@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover Benin City</title>
-  <meta name="description" content="Explore the top attractions and points of interest in Benin City.">
+
+  <title>Discover Benin City – Top Attractions, Culture & Landmarks</title>
+  <meta name="description" content="Explore Benin City's top attractions, culture, history, markets, and natural sites. Discover why Benin City is a vibrant destination for visitors and businesses.">
   <meta name="author" content="Omoregbe Oghodo">
   <meta name="theme-color" content="#004aad">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Discover Benin City">
-  <meta property="og:description" content="Explore verified businesses, organizations, and entrepreneurs in Benin City.">
-  <meta property="og:image" content="images/og-image.jpg">
-  <meta property="og:url" content="discover.html">
+  <!-- Open Graph (absolute URLs) -->
+  <meta property="og:title" content="Discover Benin City – Top Attractions, Culture & Landmarks">
+  <meta property="og:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer.">
+  <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg">
+  <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/discover.html">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Discover Benin City – Top Attractions, Culture & Landmarks">
+  <meta name="twitter:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer.">
+  <meta name="twitter:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="https://oghodo.github.io/wdd231/chamber/images/favicon.ico" type="image/x-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +35,15 @@
   <link rel="stylesheet" href="styles/discover.css">
   <link rel="stylesheet" href="styles/medium.css" media="screen and (min-width: 641px)">
 </head>
+
 <body>
-  <!-- Header -->
+  <!-- Header (branding + nav; no h1 here to satisfy validator rules) -->
   <header>
-    <h1>Benin City Chamber of Commerce</h1>
-    <nav>
+    <div class="brand" aria-hidden="true">Benin City Chamber of Commerce</div>
+
+    <nav aria-label="Primary">
       <ul>
-        <li><a href="index.html" title="Home Page">Home</a></li>
+        <li><a href="index.html" title="Home page">Home</a></li>
         <li><a href="join.html" title="Join the Chamber">Join</a></li>
         <li><a href="discover.html" class="active" title="Discover Benin City">Discover</a></li>
         <li><a href="directory.html" title="Chamber Directory">Directory</a></li>
@@ -41,24 +51,28 @@
     </nav>
   </header>
 
-  <!-- Main Content -->
   <main class="discover-grid">
-    <!-- Visitor Message -->
-    <section id="visitor-message" aria-live="polite"></section>
+    <!-- Primary page heading (single h1 required inside main) -->
+    <h1 id="pageTitle">Benin City Chamber of Commerce — Discover</h1>
 
-    <!-- Cards Container -->
-    <section class="cards-container" id="cards-container" aria-label="Points of Interest">
-      <!-- Cards will be dynamically generated here from JSON -->
+    <!-- Visitor Message (localStorage will populate) -->
+    <section id="visitor-message" aria-live="polite" class="visitor-msg">
+      <h2 class="visually-hidden">Visitor Message</h2>
+      <!-- populated by scripts/discover.js -->
+    </section>
+
+    <!-- Cards container (cards generated via JSON + JS) -->
+    <section class="cards-container" id="cards-container" aria-label="Points of interest in Benin City">
+      <!-- dynamic content -->
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
-    <p id="lastModified"></p>
+    <p id="lastModified" aria-hidden="true"></p>
   </footer>
 
-  <!-- Script -->
-  <script type="module" src="scripts/discover.js" defer></script>
+  <!-- JavaScript (module) -->
+  <script type="module" src="scripts/discover.js"></script>
 </body>
 </html>
