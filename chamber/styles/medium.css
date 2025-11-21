@@ -3,19 +3,18 @@
 
   /* Slightly increase padding for better spacing */
   .discover-grid {
-    padding: 2rem 2rem;
+    padding: 2rem var(--card-padding);
   }
 
   /* Cards Container - 2 columns */
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: var(--card-gap);
   }
 
   /* Card hover effect still applies on larger tablets */
   .card:hover img {
     transform: scale(1.03);
-    transition: transform 0.3s;
   }
 
   /* Adjust typography slightly for readability */

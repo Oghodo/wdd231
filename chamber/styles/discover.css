@@ -4,13 +4,14 @@
   --primary-dark: #092c6a;
   --accent-color: #004aad;
   --background-color: #f4f6f8;
-  --text-color: #222;
-  --white: #fff;
+  --text-color: #222222;
+  --white: #ffffff;
   --border-radius: 10px;
   --transition-speed: 0.3s;
   --card-padding: 1rem;
   --card-gap: 1.5rem;
   --font-family: 'Roboto', sans-serif;
+  --card-border: #e0e0e0;
 }
 
 /* ===== RESET ===== */
@@ -101,8 +102,9 @@ nav a.active {
 .card img {
   width: 100%;
   display: block;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--card-border);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  transition: transform var(--transition-speed);
 }
 
 .card-content {
@@ -133,15 +135,16 @@ nav a.active {
   transition: background-color var(--transition-speed);
 }
 
-.card a.button:hover {
+.card a.button:hover,
+.card a.button:focus {
   background-color: var(--accent-color);
+  outline: none;
 }
 
 /* ===== IMAGE HOVER EFFECT (DESKTOP ONLY) ===== */
 @media (min-width: 768px) {
   .card:hover img {
     transform: scale(1.05);
-    transition: transform var(--transition-speed);
   }
 }
 
