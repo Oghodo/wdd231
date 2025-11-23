@@ -1,19 +1,19 @@
 /* ================== DISCOVER.CSS ================== */
 
-/* ---- CSS Variables ---- */
+/* Variables */
 :root {
-    --primary-color: #75a9ecff;
-    --secondary-color: #f0f0f0;
-    --text-color: #333;
+    --primary: #004aad;
+    --secondary: #f0f0f0;
+    --text: #333;
     --card-bg: #fff;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-    --hover-shadow: rgba(0, 0, 0, 0.2);
+    --card-shadow: rgba(0,0,0,0.1);
+    --hover-shadow: rgba(0,0,0,0.2);
     --border-radius: 8px;
-    --transition-speed: 0.3s;
-    --font-family: 'Roboto', sans-serif;
+    --transition: 0.3s;
+    --font: 'Roboto', sans-serif;
 }
 
-/* ---- Global Styles ---- */
+/* Global */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -21,29 +21,24 @@
 }
 
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+    font-family: var(--font);
+    background: var(--secondary);
+    color: var(--text);
 }
 
-h1, h2, h3 {
-    color: var(--primary-color);
-}
+h1,h2,h3 { color: var(--primary); }
 
-/* ---- Header ---- */
+/* Header */
 header {
-    background-color: var(--primary-color);
+    background: var(--primary);
     color: #fff;
-    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem;
 }
 
-header h1 {
-    font-size: 1.5rem;
-}
+header h1 { font-size: 1.5rem; }
 
 nav ul {
     list-style: none;
@@ -54,14 +49,10 @@ nav ul {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
 }
 
-nav ul li a.active {
-    text-decoration: underline;
-}
+nav ul li a.active { text-decoration: underline; }
 
-/* ---- Mobile Menu Button ---- */
 #menuButton {
     display: none;
     background: none;
@@ -71,82 +62,54 @@ nav ul li a.active {
     cursor: pointer;
 }
 
-/* ---- Main Section ---- */
-main {
-    padding: 2rem;
-}
+/* Main */
+main { padding: 2rem; text-align: center; }
 
-.page-title {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-}
+.page-title { font-size: 2rem; margin-bottom: 1rem; }
 
-/* ---- Visitor Message ---- */
-#visit-section {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-style: italic;
-    color: var(--primary-color);
-}
+#visit-section { font-style: italic; color: var(--primary); margin-bottom: 2rem; }
 
-/* ---- Places Grid ---- */
+/* Grid Cards */
 .places-grid {
     display: grid;
     gap: 1.5rem;
 }
 
-/* ---- Card ---- */
 .place-card {
-    background-color: var(--card-bg);
+    background: var(--card-bg);
     border-radius: var(--border-radius);
     box-shadow: 0 2px 5px var(--card-shadow);
     overflow: hidden;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .place-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    display: block;
 }
 
 .place-card .place-info {
     padding: 1rem;
 }
 
-.place-card h2 {
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.place-card .address {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-}
-
-.place-card .description {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
+.place-card h2 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+.place-card .address { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
+.place-card .description { font-size: 0.9rem; margin-bottom: 0.5rem; }
 
 .place-card a {
     display: inline-block;
     text-decoration: none;
     color: #fff;
-    background-color: var(--primary-color);
+    background: var(--primary);
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    transition: background-color var(--transition-speed);
+    transition: background var(--transition);
 }
 
-.place-card a:hover {
-    background-color: darken(var(--primary-color), 10%);
-}
+.place-card a:hover { background: darkblue; }
 
-/* ---- Hover effect for large screens only ---- */
+/* Hover effect for larger screens */
 @media (min-width: 641px) {
     .place-card:hover {
         transform: translateY(-5px);
@@ -154,51 +117,25 @@ main {
     }
 }
 
-/* ---- Footer ---- */
-footer {
-    background-color: var(--primary-color);
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-}
+/* Footer */
+footer { background: var(--primary); color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
 
-/* ---- Responsive Grid ---- */
+/* Responsive Grid */
 
-/* Small screens (320px - 640px) */
+/* Small screens (mobile) */
 @media (max-width: 640px) {
-    #menuButton {
-        display: block;
-    }
-    nav ul {
-        flex-direction: column;
-        display: none;
-        background-color: var(--primary-color);
-        padding: 1rem;
-        position: absolute;
-        right: 1rem;
-        top: 60px;
-        border-radius: var(--border-radius);
-    }
-    nav ul.open {
-        display: flex;
-    }
-
-    .places-grid {
-        grid-template-columns: 1fr;
-    }
+    #menuButton { display: block; }
+    nav ul { flex-direction: column; display: none; background: var(--primary); padding: 1rem; position: absolute; right: 1rem; top: 60px; border-radius: var(--border-radius); }
+    nav ul.open { display: flex; }
+    .places-grid { grid-template-columns: 1fr; }
 }
 
-/* Medium screens (641px - 1024px) */
+/* Medium screens (tablet) */
 @media (min-width: 641px) and (max-width: 1024px) {
-    .places-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    .places-grid { grid-template-columns: repeat(2,1fr); }
 }
 
-/* Large screens (1025px and up) */
+/* Large screens (desktop) */
 @media (min-width: 1025px) {
-    .places-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .places-grid { grid-template-columns: repeat(4,1fr); }
 }

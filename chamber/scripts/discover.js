@@ -1,14 +1,14 @@
 // ================== DISCOVER.JS ==================
 
-// ---- Visitor Message using localStorage ----
+// Visitor message using localStorage
 const visitDisplay = document.getElementById("last-visit");
 const lastVisit = localStorage.getItem("lastVisit");
-const currentTime = Date.now();
+const now = Date.now();
 
 if (!lastVisit) {
     visitDisplay.textContent = "Welcome! Let us know if you have any questions.";
 } else {
-    const days = Math.floor((currentTime - lastVisit) / (1000 * 60 * 60 * 24));
+    const days = Math.floor((now - lastVisit) / (1000*60*60*24));
     if (days === 0) {
         visitDisplay.textContent = "Back so soon! Awesome!";
     } else if (days === 1) {
@@ -17,34 +17,28 @@ if (!lastVisit) {
         visitDisplay.textContent = `You last visited ${days} days ago.`;
     }
 }
-localStorage.setItem("lastVisit", currentTime);
+localStorage.setItem("lastVisit", now);
 
-// ---- Set Current Year in Footer ----
-const yearSpan = document.getElementById("year");
-if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
-}
+// Footer year
+document.getElementById("year").textContent = new Date().getFullYear();
 
-// ---- Mobile Menu Toggle ----
+// Mobile menu toggle
 const menuButton = document.getElementById("menuButton");
 const navMenu = document.getElementById("navMenu");
-
 menuButton.addEventListener("click", () => {
     const expanded = menuButton.getAttribute("aria-expanded") === "true" || false;
     menuButton.setAttribute("aria-expanded", !expanded);
     navMenu.classList.toggle("open");
 });
 
-// ---- Load JSON and Build Cards ----
+// Load JSON and build cards
 const gridContainer = document.querySelector(".places-grid");
-
 fetch("discover.json")
-    .then((response) => response.json())
-    .then((data) => {
-        data.forEach((place) => {
+    .then(res => res.json())
+    .then(data => {
+        data.forEach(place => {
             const card = document.createElement("div");
             card.className = "place-card";
-
             card.innerHTML = `
                 <img src="${place.image}" alt="${place.name}" loading="lazy">
                 <div class="place-info">
@@ -55,8 +49,7 @@ fetch("discover.json")
                     <a href="${place.link}" target="_blank" rel="noopener">Learn More</a>
                 </div>
             `;
-
             gridContainer.appendChild(card);
         });
     })
-    .catch((error) => console.error("Error loading discover.json:", error));
+    .catch(err => console.error("Error loading JSON:", err));
