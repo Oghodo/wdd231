@@ -3,64 +3,64 @@
     "name": "Benin City National Museum",
     "address": "Kings Square, Benin City, Nigeria",
     "description": "Explore the art, history, and culture of the Edo people at the National Museum.",
-    "image": "museum.webp",
-    "link": "https://en.wikipedia.org/wiki/Benin_City_National_Museum",
+    "image": "images/museum.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/museum.html",
     "category": "Museum"
   },
   {
     "name": "Oba Palace",
     "address": "Ring Road, Benin City, Nigeria",
     "description": "The royal palace of the Oba of Benin, showcasing traditional architecture and artifacts.",
-    "image": "palace.webp",
-    "link": "https://en.wikipedia.org/wiki/Royal_Palace_of_the_Oba_of_Benin",
+    "image": "images/palace.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/palace.html",
     "category": "Palace"
   },
   {
     "name": "Emotan Statue",
     "address": "Sapele Road, Benin City",
     "description": "A historic statue commemorating Emotan, a heroine of Benin City.",
-    "image": "emotan.webp",
-    "link": "https://en.wikipedia.org/wiki/Emotan",
+    "image": "images/emotan.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/emotan.html",
     "category": "Statue"
   },
   {
     "name": "Igun Street Art Market",
     "address": "Igun Street, Benin City",
     "description": "Famous for bronze casting and local art workshops.",
-    "image": "igun.webp",
-    "link": "https://edo-nation.net/tourism",
+    "image": "images/igun.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/igun.html",
     "category": "Market"
   },
   {
     "name": "Okomu National Park",
     "address": "Okomu, Edo State",
     "description": "A wildlife sanctuary and tropical rainforest for nature lovers.",
-    "image": "okomu.webp",
-    "link": "https://en.wikipedia.org/wiki/Okomu_National_Park",
+    "image": "images/okomu.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/okomu.html",
     "category": "Nature"
   },
   {
     "name": "Benin Moat",
     "address": "Various locations around Benin City",
     "description": "Historic earthworks and defensive walls of the old Benin Kingdom.",
-    "image": "moat.webp",
-    "link": "https://edo-nation.net/tourism",
+    "image": "images/moat.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/moat.html",
     "category": "Historic Site"
   },
   {
     "name": "Edo Cultural Centre",
     "address": "Ring Road, Benin City",
     "description": "Cultural exhibitions, workshops, and performances celebrating Edo heritage.",
-    "image": "cultural_centre.webp",
-    "link": "https://edo-nation.net/tourism",
+    "image": "images/cultural_centre.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/cultural_centre.html",
     "category": "Cultural Centre"
   },
   {
     "name": "Oba Market",
     "address": "Oba Market Rd, Benin City",
     "description": "Bustling local market with food, crafts, and traditional goods.",
-    "image": "oba_market.webp",
-    "link": "https://en.wikipedia.org/wiki/Oba_Market",
+    "image": "images/oba_market.webp",
+    "link": "https://oghodo.github.io/wdd231/chamber/oba_market.html",
     "category": "Market"
   }
 ]

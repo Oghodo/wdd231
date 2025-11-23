@@ -1,141 +1,163 @@
-/* ================== DISCOVER.CSS ================== */
-
-/* Variables */
+/* ===== ROOT VARIABLES ===== */
 :root {
-    --primary: #004aad;
-    --secondary: #f0f0f0;
-    --text: #333;
-    --card-bg: #fff;
-    --card-shadow: rgba(0,0,0,0.1);
-    --hover-shadow: rgba(0,0,0,0.2);
-    --border-radius: 8px;
-    --transition: 0.3s;
-    --font: 'Roboto', sans-serif;
+  --primary-color: #0b3d91;
+  --primary-dark: #092c6a;
+  --accent-color: #004aad;
+  --background-color: #f4f6f8;
+  --text-color: #222;
+  --white: #fff;
+  --border-radius: 10px;
+  --transition-speed: 0.3s;
+  --card-padding: 1rem;
+  --card-gap: 1.5rem;
+  --font-family: 'Roboto', sans-serif;
 }
 
-/* Global */
+/* ===== RESET ===== */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font);
-    background: var(--secondary);
-    color: var(--text);
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-h1,h2,h3 { color: var(--primary); }
-
-/* Header */
+/* ===== HEADER ===== */
 header {
-    background: var(--primary);
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  text-align: center;
 }
-
-header h1 { font-size: 1.5rem; }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
 }
 
-nav ul li a.active { text-decoration: underline; }
-
-#menuButton {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: #fff;
-    cursor: pointer;
+nav a:hover,
+nav a.active {
+  background-color: var(--accent-color);
 }
 
-/* Main */
-main { padding: 2rem; text-align: center; }
-
-.page-title { font-size: 2rem; margin-bottom: 1rem; }
-
-#visit-section { font-style: italic; color: var(--primary); margin-bottom: 2rem; }
-
-/* Grid Cards */
-.places-grid {
-    display: grid;
-    gap: 1.5rem;
+/* ===== MAIN GRID ===== */
+.discover-grid {
+  display: grid;
+  grid-template-areas:
+    "visitor"
+    "cards";
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
 
-.place-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    box-shadow: 0 2px 5px var(--card-shadow);
-    overflow: hidden;
-    transition: transform var(--transition), box-shadow var(--transition);
+#visitor-message {
+  grid-area: visitor;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.place-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+/* ===== CARDS CONTAINER ===== */
+.cards-container {
+  grid-area: cards;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--card-gap);
 }
 
-.place-card .place-info {
-    padding: 1rem;
+/* ===== INDIVIDUAL CARD ===== */
+.card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform var(--transition-speed);
+  display: flex;
+  flex-direction: column;
 }
 
-.place-card h2 { margin-bottom: 0.5rem; font-size: 1.2rem; }
-.place-card .address { font-size: 0.9rem; color: #666; margin-bottom: 0.5rem; }
-.place-card .description { font-size: 0.9rem; margin-bottom: 0.5rem; }
-
-.place-card a {
-    display: inline-block;
-    text-decoration: none;
-    color: #fff;
-    background: var(--primary);
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    transition: background var(--transition);
+.card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #ddd;
 }
 
-.place-card a:hover { background: darkblue; }
+.card-content {
+  padding: var(--card-padding);
+  flex: 1;
+}
 
-/* Hover effect for larger screens */
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+}
+
+.card p {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.card a.button {
+  text-align: center;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color var(--transition-speed);
+}
+
+.card a.button:hover {
+  background-color: var(--accent-color);
+}
+
+/* ===== IMAGE HOVER EFFECT ===== */
+@media (min-width: 768px) {
+  .card:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* ===== MEDIUM / TABLET GRID ===== */
 @media (min-width: 641px) {
-    .place-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 10px var(--hover-shadow);
-    }
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Footer */
-footer { background: var(--primary); color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
-
-/* Responsive Grid */
-
-/* Small screens (mobile) */
-@media (max-width: 640px) {
-    #menuButton { display: block; }
-    nav ul { flex-direction: column; display: none; background: var(--primary); padding: 1rem; position: absolute; right: 1rem; top: 60px; border-radius: var(--border-radius); }
-    nav ul.open { display: flex; }
-    .places-grid { grid-template-columns: 1fr; }
+/* ===== LARGE / DESKTOP GRID ===== */
+@media (min-width: 1024px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* Medium screens (tablet) */
-@media (min-width: 641px) and (max-width: 1024px) {
-    .places-grid { grid-template-columns: repeat(2,1fr); }
-}
-
-/* Large screens (desktop) */
-@media (min-width: 1025px) {
-    .places-grid { grid-template-columns: repeat(4,1fr); }
+/* ===== FOOTER ===== */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }

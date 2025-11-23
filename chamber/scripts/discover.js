@@ -1,55 +1,77 @@
-// ================== DISCOVER.JS ==================
+// scripts/discover.js
+const cardsContainer = document.getElementById('cards-container');
+const visitorMessage = document.getElementById('visitor-message');
 
-// Visitor message using localStorage
-const visitDisplay = document.getElementById("last-visit");
-const lastVisit = localStorage.getItem("lastVisit");
-const now = Date.now();
-
-if (!lastVisit) {
-    visitDisplay.textContent = "Welcome! Let us know if you have any questions.";
-} else {
-    const days = Math.floor((now - lastVisit) / (1000*60*60*24));
-    if (days === 0) {
-        visitDisplay.textContent = "Back so soon! Awesome!";
-    } else if (days === 1) {
-        visitDisplay.textContent = "You last visited 1 day ago.";
-    } else {
-        visitDisplay.textContent = `You last visited ${days} days ago.`;
-    }
+async function fetchAttractions() {
+  try {
+    const response = await fetch('discovery.json');
+    const attractions = await response.json();
+    displayVisitorMessage();
+    createFilterButtons(attractions);
+    displayCards(attractions);
+  } catch (error) {
+    console.error('Error fetching JSON:', error);
+    cardsContainer.innerHTML = '<p>Failed to load attractions.</p>';
+  }
 }
-localStorage.setItem("lastVisit", now);
 
-// Footer year
-document.getElementById("year").textContent = new Date().getFullYear();
+function displayVisitorMessage() {
+  const name = localStorage.getItem('visitorName') || 'Guest';
+  visitorMessage.textContent = `Welcome, ${name}! Explore the top attractions in Benin City.`;
+}
 
-// Mobile menu toggle
-const menuButton = document.getElementById("menuButton");
-const navMenu = document.getElementById("navMenu");
-menuButton.addEventListener("click", () => {
-    const expanded = menuButton.getAttribute("aria-expanded") === "true" || false;
-    menuButton.setAttribute("aria-expanded", !expanded);
-    navMenu.classList.toggle("open");
-});
+function createFilterButtons(attractions) {
+  // Get unique categories
+  const categories = ['All', ...new Set(attractions.map(a => a.category))];
 
-// Load JSON and build cards
-const gridContainer = document.querySelector(".places-grid");
-fetch("discover.json")
-    .then(res => res.json())
-    .then(data => {
-        data.forEach(place => {
-            const card = document.createElement("div");
-            card.className = "place-card";
-            card.innerHTML = `
-                <img src="${place.image}" alt="${place.name}" loading="lazy">
-                <div class="place-info">
-                    <span class="category-tag">${place.category}</span>
-                    <h2>${place.name}</h2>
-                    <p class="address">${place.address}</p>
-                    <p class="description">${place.description}</p>
-                    <a href="${place.link}" target="_blank" rel="noopener">Learn More</a>
-                </div>
-            `;
-            gridContainer.appendChild(card);
-        });
-    })
-    .catch(err => console.error("Error loading JSON:", err));
+  const filterContainer = document.createElement('div');
+  filterContainer.classList.add('filter-buttons');
+  filterContainer.style.textAlign = 'center';
+  filterContainer.style.marginBottom = '1.5rem';
+
+  categories.forEach(cat => {
+    const button = document.createElement('button');
+    button.textContent = cat;
+    button.classList.add('filter-btn');
+    button.style.margin = '0 0.5rem';
+    button.style.padding = '0.5rem 1rem';
+    button.style.border = 'none';
+    button.style.borderRadius = 'var(--border-radius)';
+    button.style.cursor = 'pointer';
+    button.style.backgroundColor = 'var(--primary-color)';
+    button.style.color = 'var(--white)';
+    button.style.fontWeight = '700';
+    button.addEventListener('click', () => filterCards(cat, attractions));
+    filterContainer.appendChild(button);
+  });
+
+  cardsContainer.parentNode.insertBefore(filterContainer, cardsContainer);
+}
+
+function filterCards(category, attractions) {
+  const filtered = category === 'All' 
+    ? attractions 
+    : attractions.filter(a => a.category === category);
+  displayCards(filtered);
+}
+
+function displayCards(attractions) {
+  cardsContainer.innerHTML = '';
+  attractions.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="images/${a.image}" alt="${a.name}">
+      <div class="card-content">
+        <h2>${a.name}</h2>
+        <p><strong>Address:</strong> ${a.address}</p>
+        <p>${a.description}</p>
+        <a class="button" href="${a.link}" target="_blank" rel="noopener">Learn More</a>
+      </div>
+    `;
+    cardsContainer.appendChild(card);
+  });
+}
+
+// Run
+fetchAttractions();
