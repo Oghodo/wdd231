@@ -1,75 +1,43 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Omoregbe Oghodo">
+  <meta name="description" content="Explore Benin City's top attractions, culture, history, markets, and natural sites.">
   <title>Discover Benin City – Top Attractions & Culture</title>
-  <meta name="description" content="Explore Benin City's top attractions, culture, history, markets, and natural sites." />
-  <meta name="author" content="Omoregbe Oghodo" />
-  <meta name="theme-color" content="#004aad" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Discover Benin City – Top Attractions & Culture" />
-  <meta property="og:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer." />
-  <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg" />
-  <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/discover.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Discover Benin City – Top Attractions & Culture" />
-  <meta name="twitter:description" content="Discover the best attractions, cultural sites, historic landmarks, markets, and natural adventures Benin City has to offer." />
-  <meta name="twitter:image" content="https://oghodo.github.io/wdd231/chamber/images/discover-og.jpg" />
-
-  <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/discover.css" />
-  <link rel="stylesheet" href="styles/medium.css" media="screen and (min-width: 641px)" />
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="styles/discover.css">
+  <link rel="stylesheet" href="styles/medium.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- HEADER -->
   <header>
-    <div class="brand" aria-hidden="true">Benin City Chamber of Commerce</div>
-    <nav aria-label="Primary">
+    <h1>Benin City Chamber of Commerce</h1>
+    <nav>
       <ul>
-        <li><a href="index.html" title="Home page">Home</a></li>
-        <li><a href="join.html" title="Join the Chamber">Join</a></li>
-        <li><a href="discover.html" class="active" title="Discover Benin City">Discover</a></li>
-        <li><a href="directory.html" title="Chamber Directory">Directory</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="discover.html" class="active">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- MAIN -->
-  <main class="discover-grid">
-    <h1 id="pageTitle">Benin City Chamber of Commerce — Discover</h1>
-
-    <section id="visitor-message" aria-live="polite" class="visitor-msg">
-      Welcome! Explore the top attractions and cultural highlights of Benin City.
-    </section>
-
-    <section class="cards-container" id="cards-container" aria-label="Points of interest in Benin City">
-      <!-- Cards will be dynamically generated via JS -->
-    </section>
+  <main>
+    <h1>Benin City Chamber of Commerce — Discover</h1>
+    <p id="visitor-message">Loading attractions...</p>
+    <div class="discover-grid">
+      <div class="cards-container"></div>
+    </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
-    <p id="lastModified" aria-hidden="true"></p>
+    © Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="scripts/discover.js" defer></script>
+  <script src="scripts/discover.js" type="module"></script>
 </body>
 </html>
