@@ -1,63 +1,40 @@
-// scripts/discover.js
-document.addEventListener("DOMContentLoaded", async () => {
-  const container = document.querySelector(".cards-container");
-  const visitorMessage = document.getElementById("visitor-message");
+import { discoverItems } from '../data/discoverData.mjs';
 
-  try {
-    // Fetch the JSON data
-    const response = await fetch("discover.json");
-    if (!response.ok) throw new Error("Failed to load attractions.");
+// ===== Display Visitor Message =====
+const visitorMessage = document.getElementById('visitorMessage');
+if (visitorMessage) {
+    const now = Date.now();
+    const lastVisit = localStorage.getItem('lastVisit');
+    let message = "Welcome! Let us know if you have any questions.";
 
-    const attractions = await response.json();
-
-    if (attractions.length === 0) {
-      visitorMessage.textContent = "No attractions found at this time.";
-      return;
+    if (lastVisit) {
+        const daysDiff = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+        if (daysDiff < 1) message = "Back so soon! Awesome!";
+        else message = `You last visited ${daysDiff} ${daysDiff === 1 ? 'day' : 'days'} ago.`;
     }
+    visitorMessage.textContent = message;
+    localStorage.setItem('lastVisit', now);
+}
 
-    // Clear visitor message if data exists
-    visitorMessage.textContent = "Welcome! Explore the top attractions and cultural highlights of Benin City.";
-
-    // Create card elements for each attraction
-    attractions.forEach(attraction => {
-      const card = document.createElement("div");
-      card.className = "card";
-
-      // Image
-      const img = document.createElement("img");
-      img.src = attraction.image;
-      img.alt = attraction.name;
-
-      // Card content container
-      const content = document.createElement("div");
-      content.className = "card-content";
-
-      // Name / Title
-      const title = document.createElement("h2");
-      title.textContent = attraction.name;
-
-      // Description
-      const desc = document.createElement("p");
-      desc.textContent = attraction.description;
-
-      // Link button
-      const link = document.createElement("a");
-      link.href = attraction.link;
-      link.textContent = "Learn More";
-      link.className = "button";
-
-      // Append elements
-      content.appendChild(title);
-      content.appendChild(desc);
-      content.appendChild(link);
-
-      card.appendChild(img);
-      card.appendChild(content);
-
-      container.appendChild(card);
+// ===== Populate Discover Cards =====
+const cardsContainer = document.getElementById('discoverCards');
+if (cardsContainer) {
+    discoverItems.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <h2>${item.title}</h2>
+            <figure>
+                <img src="${item.image}" alt="${item.title}" width="300" height="200" loading="lazy">
+            </figure>
+            <address>${item.address}</address>
+            <p>${item.description}</p>
+            <button>Learn More</button>
+        `;
+        cardsContainer.appendChild(card);
     });
-  } catch (error) {
-    console.error(error);
-    visitorMessage.textContent = "Failed to load attractions.";
-  }
-});
+}
+
+// ===== Footer Year & Last Modified =====
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
