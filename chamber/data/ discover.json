@@ -20,7 +20,7 @@
     "address": "Sapele Road, Benin City",
     "description": "A historic statue commemorating Emotan, a heroine of Benin City.",
     "image": "emotan.webp",
-    "link": "https://en.wikipedia.org/wiki/Emotan", 
+    "link": "https://en.wikipedia.org/wiki/Emotan",
     "category": "Statue"
   },
   {
@@ -28,7 +28,7 @@
     "address": "Igun Street, Benin City",
     "description": "Famous for bronze casting and local art workshops.",
     "image": "igun.webp",
-    "link": "https://edo-nation.net/tourism", 
+    "link": "https://edo-nation.net/tourism",
     "category": "Market"
   },
   {
@@ -44,7 +44,7 @@
     "address": "Various locations around Benin City",
     "description": "Historic earthworks and defensive walls of the old Benin Kingdom.",
     "image": "moat.webp",
-    "link": "https://edo-nation.net/tourism",  
+    "link": "https://edo-nation.net/tourism",
     "category": "Historic Site"
   },
   {
@@ -52,7 +52,7 @@
     "address": "Ring Road, Benin City",
     "description": "Cultural exhibitions, workshops, and performances celebrating Edo heritage.",
     "image": "cultural_centre.webp",
-    "link": "https://edo-nation.net/tourism",  
+    "link": "https://edo-nation.net/tourism",
     "category": "Cultural Centre"
   },
   {
@@ -64,4 +64,3 @@
     "category": "Market"
   }
 ]
-
