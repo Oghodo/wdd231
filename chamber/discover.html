@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Benin City | Chamber of Commerce Directory</title>
+  <meta name="description" content="Explore verified businesses, attractions, and organizations in Benin City with our Chamber directory.">
+  <meta name="author" content="Omoregbe Oghodo">
+  <meta name="theme-color" content="#004aad">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Discover Benin City | Chamber of Commerce Directory">
+  <meta property="og:description" content="Explore verified businesses, attractions, and organizations in Benin City with our Chamber directory.">
+  <meta property="og:image" content="https://oghodo.github.io/wdd231/chamber/images/og-image-discover.webp">
+  <meta property="og:url" content="https://oghodo.github.io/wdd231/chamber/discover.html">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/discover.css">
+  <link rel="stylesheet" href="styles/directory.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header>
+    <div class="container header-inner">
+      <h1>Benin City Chamber of Commerce</h1>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html" class="active">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <h1>Discover the Heart of Benin City</h1>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero">
+      <div class="hero-overlay">
+        <h2>Experience Culture, History, and Local Attractions</h2>
+        <p>Explore the rich heritage and vibrant spots of Benin City through our Chamber directory.</p>
+      </div>
+    </section>
+
+    <!-- ===== VISITOR MESSAGE ===== -->
+    <section id="visitorMessage" class="container"></section>
+
+    <!-- ===== CARDS GRID ===== -->
+    <section id="cardsContainer" class="cards-grid container">
+      <!-- 8 cards will be dynamically inserted via JS -->
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
+      <p id="lastModified"></p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript -->
+  <script type="module" src="scripts/discover.js"></script>
+</body>
+</html>
