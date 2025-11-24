@@ -29,38 +29,48 @@
 </head>
 <body>
 
-  <!-- ===== HEADER / NAVIGATION ===== -->
+  <!-- ===== HEADER / NAV ===== -->
   <header>
-    <h1>Benin City Chamber of Commerce</h1>
-    <nav id="mainNav">
-      <button id="menuButton" aria-controls="navMenu" aria-expanded="false">☰ Menu</button>
-      <ul id="navMenu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <h1>Benin City Chamber of Commerce</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html" class="active" aria-current="page">Discover</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <!-- ===== MAIN CONTENT ===== -->
-  <main>
-    <section id="visitorMessage">
-      <!-- Visitor message (localStorage) will be injected here -->
-    </section>
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h2>Discover the Heart of Benin City</h2>
+      <p>Explore culture, history, and vibrant local attractions through our Chamber directory.</p>
+    </div>
+  </section>
 
-    <section id="cardsContainer" class="cards-grid">
-      <!-- 8 cards will be dynamically inserted via JS -->
+  <!-- ===== VISITOR MESSAGE ===== -->
+  <section id="visitorMessage" class="container">
+    <!-- localStorage message will appear here via JS -->
+  </section>
+
+  <!-- ===== CARDS GRID ===== -->
+  <main>
+    <section id="cardsContainer" class="cards-grid container">
+      <!-- 8 cards dynamically inserted via JS -->
     </section>
   </main>
 
   <!-- ===== FOOTER ===== -->
   <footer>
-    <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
-    <p id="lastModified"></p>
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> Benin City Chamber of Commerce | Omoregbe Oghodo | WDD 231</p>
+      <p id="lastModified"></p>
+    </div>
   </footer>
 
-  <!-- Scripts -->
-  <script type="module" src="scripts/discover.js"></script>
 </body>
 </html>

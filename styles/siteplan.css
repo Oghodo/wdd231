@@ -1,0 +1,56 @@
+/* ===========================
+   IKPONMWETINOSA Site Plan CSS
+   =========================== */
+
+:root {
+  --primary-color: #1A4D8F;   /* Deep blue */
+  --accent-color:  #E8A317;   /* Gold */
+  --text-color:    #333333;
+  --bg-color:      #FAFAFA;
+
+  --heading-font: "Poppins", sans-serif;
+  --body-font: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  line-height: 1.7;
+}
+
+header, section, footer {
+  background: #ffffff;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  border: 2px solid #cccccc;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555555;
+}
