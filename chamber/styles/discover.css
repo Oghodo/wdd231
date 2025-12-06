@@ -1,0 +1,141 @@
+/* Reset & basics */
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background-color: #fff;
+  color: #111;
+}
+
+.hero {
+  position: relative;
+  background: url('../images/hero-discover.webp') center/cover no-repeat;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.welcome-msg {
+  font-weight: 700;
+  margin-top: 1rem;
+}
+
+/* Cards Section */
+.cards-section {
+  padding: 2rem;
+}
+
+.cards-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+/* Grid container */
+.cards-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+/* Medium screens */
+@media(min-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+/* Large screens */
+@media(min-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+  }
+}
+
+/* Individual card styling */
+.card {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.card-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hover effect (desktop only) */
+@media(min-width: 600px) {
+  .card:hover {
+    transform: scale(1.03);
+  }
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-content h3 {
+  margin-top: 0;
+  color: #111;
+}
+
+.card-content .address {
+  font-weight: 500;
+  color: #555;
+}
+
+.card-content .description {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.card-content .learn-more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #0078d7;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.card-content .learn-more:hover {
+  background-color: #005fa3;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #222;
+  color: #fff;
+}
