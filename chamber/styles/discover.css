@@ -1,3 +1,40 @@
+<<<<<<< HEAD
+/* ========== BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ========== HEADER & NAV ========== */
+header {
+  background-color: #004aad;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+nav ul.nav-links {
+  list-style: none;
+=======
 /* Reset & basics */
 body {
   font-family: 'Roboto', sans-serif;
@@ -11,9 +48,71 @@ body {
   position: relative;
   background: url('../images/hero-discover.webp') center/cover no-repeat;
   height: 50vh;
+>>>>>>> origin/main
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+nav ul.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+nav ul.nav-links li a:hover,
+nav ul.nav-links li a.active {
+  background-color: #ffcd00;
+  color: #004aad;
+}
+
+/* ========== HERO ========== */
+.hero {
+  background: url('../images/hero-discover.webp') center/cover no-repeat;
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-overlay p {
+  font-size: 1.1rem;
+}
+
+/* ========== VISITOR MESSAGE ========== */
+#visitorMessage {
+  margin: 2rem 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #004aad;
+}
+
+/* ========== CARDS GRID ========== */
+.cards-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+=======
   text-align: center;
   color: #fff;
 }
@@ -43,6 +142,7 @@ body {
 .cards-container {
   display: grid;
   gap: 1rem;
+>>>>>>> origin/main
   grid-template-areas:
     "card1"
     "card2"
@@ -54,6 +154,113 @@ body {
     "card8";
 }
 
+<<<<<<< HEAD
+/* Card Styling */
+.cards-grid .card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cards-grid .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card figure img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.card figure img:hover {
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin: 1rem;
+  color: #004aad;
+}
+
+.card address {
+  font-style: normal;
+  font-size: 0.9rem;
+  margin: 0 1rem 0.5rem 1rem;
+  color: #555;
+}
+
+.card p {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.card button {
+  display: block;
+  margin: 0 1rem 1rem 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #004aad;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background-color: #ffcd00;
+  color: #004aad;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background-color: #004aad;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+footer a {
+  color: #ffcd00;
+  text-decoration: none;
+}
+
+/* ========== RESPONSIVE GRID ========== */
+@media (min-width: 641px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+@media (min-width: 1025px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+  }
+}
+
+/* ========== MOBILE NAV ====== */
+@media (max-width: 640px) {
+  nav ul.nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: center;
+  }
+=======
 /* Medium screens */
 @media(min-width: 600px) {
   .cards-container {
@@ -138,4 +345,5 @@ footer {
   padding: 1rem;
   background-color: #222;
   color: #fff;
+>>>>>>> origin/main
 }

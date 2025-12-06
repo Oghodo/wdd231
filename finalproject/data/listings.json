@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1",
+    "title": "Luxury 3-Bedroom Apartment",
+    "price": 15000000,
+    "location": "GRA, Benin City",
+    "type": "Apartment",
+    "description": "Spacious apartment with modern amenities, balcony, and parking.",
+    "image": "images/property1.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Cozy 2-Bedroom Duplex",
+    "price": 12000000,
+    "location": "Ugbowo, Benin City",
+    "type": "Duplex",
+    "description": "Comfortable duplex ideal for small families with a serene environment.",
+    "image": "images/property2.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Commercial Office Space",
+    "price": 20000000,
+    "location": "Ring Road, Benin City",
+    "type": "Commercial",
+    "description": "Prime location for businesses with ample office space.",
+    "image": "images/property3.jpg"
+  },
+  {
+    "id": "4",
+    "title": "Elegant 4-Bedroom Villa",
+    "price": 35000000,
+    "location": "GRA Phase II, Benin City",
+    "type": "Villa",
+    "description": "High-end villa with swimming pool, spacious garden, and modern interiors.",
+    "image": "images/property4.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Affordable 1-Bedroom Apartment",
+    "price": 6000000,
+    "location": "Uselu, Benin City",
+    "type": "Apartment",
+    "description": "Budget-friendly apartment suitable for singles or couples.",
+    "image": "images/property5.jpg"
+  },
+  {
+    "id": "6",
+    "title": "Modern 3-Bedroom Terrace",
+    "price": 14000000,
+    "location": "Ikpoba Hill, Benin City",
+    "type": "Terrace",
+    "description": "Stylish terrace home with modern finishes and security features.",
+    "image": "images/property6.jpg"
+  },
+  {
+    "id": "7",
+    "title": "Spacious 5-Bedroom Mansion",
+    "price": 50000000,
+    "location": "GRA Phase I, Benin City",
+    "type": "Mansion",
+    "description": "Luxurious mansion with multiple living areas and landscaped garden.",
+    "image": "images/property7.jpg"
+  },
+  {
+    "id": "8",
+    "title": "Retail Shop Space",
+    "price": 8000000,
+    "location": "Sapele Road, Benin City",
+    "type": "Commercial",
+    "description": "Shop space ideal for retail businesses with high foot traffic.",
+    "image": "images/property8.jpg"
+  },
+  {
+    "id": "9",
+    "title": "Land Plot in Quiet Estate",
+    "price": 5000000,
+    "location": "Evbo-Egua, Benin City",
+    "type": "Land",
+    "description": "Secure land plot perfect for building your dream home.",
+    "image": "images/property9.jpg"
+  },
+  {
+    "id": "10",
+    "title": "Studio Apartment",
+    "price": 4500000,
+    "location": "Ugbowo, Benin City",
+    "type": "Studio",
+    "description": "Compact studio with modern amenities for a single occupant.",
+    "image": "images/property10.jpg"
+  },
+  {
+    "id": "11",
+    "title": "Duplex with Garden",
+    "price": 18000000,
+    "location": "GRA, Benin City",
+    "type": "Duplex",
+    "description": "Duplex with private garden and secure parking for residents.",
+    "image": "images/property11.jpg"
+  },
+  {
+    "id": "12",
+    "title": "High-Rise Apartment",
+    "price": 22000000,
+    "location": "Ring Road, Benin City",
+    "type": "Apartment",
+    "description": "Modern high-rise with elevators, gym, and rooftop terrace.",
+    "image": "images/property12.jpg"
+  },
+  {
+    "id": "13",
+    "title": "3-Bedroom Bungalow",
+    "price": 10000000,
+    "location": "Uselu, Benin City",
+    "type": "Bungalow",
+    "description": "Cozy bungalow with spacious living areas and private parking.",
+    "image": "images/property13.jpg"
+  },
+  {
+    "id": "14",
+    "title": "Luxury Penthouse",
+    "price": 55000000,
+    "location": "GRA Phase II, Benin City",
+    "type": "Penthouse",
+    "description": "Exclusive penthouse with panoramic city views and premium finishes.",
+    "image": "images/property14.jpg"
+  },
+  {
+    "id": "15",
+    "title": "Small Retail Space",
+    "price": 4000000,
+    "location": "Sapele Road, Benin City",
+    "type": "Commercial",
+    "description": "Compact retail space suitable for boutique or small shop.",
+    "image": "images/property15.jpg"
+  }
+]
