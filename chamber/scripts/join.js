@@ -1,78 +1,69 @@
-// ===== Populate hidden timestamp =====
-const timestampInput = document.getElementById('timestamp');
+// ===== Timestamp Injection =====
+const timestampInput = document.getElementById("timestamp");
 if (timestampInput) {
-    const now = new Date();
-    timestampInput.value = now.toISOString();
-
-    // Optional debug display below the form
-    const timestampDebug = document.createElement('p');
-    timestampDebug.style.fontSize = '0.9rem';
-    timestampDebug.style.color = '#fff';
-    timestampDebug.style.marginTop = '10px';
-    timestampDebug.textContent = `DEBUG: Timestamp set to ${timestampInput.value}`;
-    document.querySelector('form').appendChild(timestampDebug);
+    timestampInput.value = new Date().toISOString();
 }
 
-// ===== Modal functionality =====
-const modalButtons = document.querySelectorAll('.card button');
-const closeButtons = document.querySelectorAll('.close');
+// ===== Modal Functionality =====
+const modalButtons = document.querySelectorAll("[data-modal]");
+const closeButtons = document.querySelectorAll(".close");
 
-modalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modalId = button.dataset.modal;
-        const modal = document.getElementById(modalId);
-        if (modal) modal.style.display = 'flex';
+modalButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modalID = btn.dataset.modal;
+        const modal = document.getElementById(modalID);
+        if (modal) {
+            modal.style.display = "flex";
+            modal.setAttribute("aria-hidden", "false");
+        }
     });
 });
 
-closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const modal = button.closest('.modal');
-        if (modal) modal.style.display = 'none';
+closeButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modal = btn.closest(".modal");
+        if (modal) {
+            modal.style.display = "none";
+            modal.setAttribute("aria-hidden", "true");
+        }
     });
 });
 
-// Close modal when clicking outside content
-window.addEventListener('click', (e) => {
-    if (e.target.classList.contains('modal')) {
-        e.target.style.display = 'none';
+// Close modal by clicking the background
+window.addEventListener("click", (e) => {
+    if (e.target.classList.contains("modal")) {
+        e.target.style.display = "none";
+        e.target.setAttribute("aria-hidden", "true");
     }
 });
 
-// ===== Update footer: current year and last modified =====
-const yearEl = document.getElementById('currentYear');
-const lastModEl = document.getElementById('lastModified');
+// ===== Footer: Current Year & Last Modified =====
+const yearEl = document.getElementById("currentYear");
+const lastModEl = document.getElementById("lastModified");
+
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 if (lastModEl) lastModEl.textContent = `Last Modified: ${document.lastModified}`;
 
-// ===== Display form data on thankyou.html =====
-const thankyouMessage = document.getElementById('thankyouMessage');
-if (thankyouMessage) {
+// ===== Thank You Page Data Injection =====
+const thanksMsg = document.getElementById("thankyouMessage");
+
+if (thanksMsg) {
     const params = new URLSearchParams(window.location.search);
 
-    // Safely get each parameter or fallback to "N/A"
-    const firstName = params.get('firstName') || 'N/A';
-    const lastName = params.get('lastName') || 'N/A';
-    const title = params.get('title') || 'N/A';
-    const email = params.get('email') || 'N/A';
-    const phone = params.get('phone') || 'N/A';
-    const organization = params.get('organization') || 'N/A';
-    const description = params.get('description') || 'N/A';
-    let submittedAt = params.get('timestamp');
+    const get = (name) => params.get(name) || "Not Provided";
 
-    // If timestamp is missing, set it to current time
-    if (!submittedAt) {
-        submittedAt = new Date().toISOString();
-    }
+    const submitted = get("timestamp") !== "Not Provided"
+        ? get("timestamp")
+        : new Date().toISOString();
 
-    thankyouMessage.innerHTML = `
-        <p><strong>First Name:</strong> ${firstName}</p>
-        <p><strong>Last Name:</strong> ${lastName}</p>
-        <p><strong>Title:</strong> ${title}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Mobile:</strong> ${phone}</p>
-        <p><strong>Business/Organization Name:</strong> ${organization}</p>
-        <p><strong>Business Description:</strong> ${description}</p>
-        <p><strong>Submitted At:</strong> ${submittedAt}</p>
+    thanksMsg.innerHTML = `
+        <p><strong>First Name:</strong> ${get("firstName")}</p>
+        <p><strong>Last Name:</strong> ${get("lastName")}</p>
+        <p><strong>Title:</strong> ${get("title")}</p>
+        <p><strong>Email:</strong> ${get("email")}</p>
+        <p><strong>Mobile:</strong> ${get("phone")}</p>
+        <p><strong>Business/Organization Name:</strong> ${get("organization")}</p>
+        <p><strong>Description:</strong> ${get("description")}</p>
+        <p><strong>Submitted At:</strong> ${submitted}</p>
     `;
 }
