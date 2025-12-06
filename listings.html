@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <!-- ===== META TAGS ===== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listings | IKPONMWETINOSA Real Estate</title>
+  <meta name="description" content="Browse curated property listings in Benin City — find your ideal home or investment.">
+  <meta name="author" content="Omoregbe Oghodo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IKPONMWETINOSA Real Estate Listings">
+  <meta property="og:description" content="Discover properties for sale and rent in Benin City with verified details.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon" type="image/x-icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/page.css">
+</head>
+<body>
+  <!-- ===== SKIP LINK ===== -->
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">🏠 IKPONMWETINOSA Real Estate</a>
+      <button class="hamburger" aria-controls="nav" aria-expanded="false" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="listings.html">Listings</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="form.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN ===== -->
+  <main id="main" class="container">
+    <section class="listings-hero">
+      <h1>Curated Property Listings</h1>
+      <p>Find your next home or investment property in Benin City.</p>
+    </section>
+
+    <section class="listings-grid" id="listings-container">
+      <!-- Dynamic listings will be injected here by listingsModule.js -->
+    </section>
+  </main>
+
+  <!-- ===== MODAL ===== -->
+  <div id="listing-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+    <div class="modal-inner">
+      <button id="modal-close" aria-label="Close modal">&times;</button>
+      <div id="modal-content" tabindex="-1">
+        <!-- Listing details will be injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 IKPONMWETINOSA Real Estate — Omoregbe Oghodo</p>
+      <p><a href="https://youtu.be/zJIX7GQSOFo">Video demo</a> | <a href="https://youtu.be/dMRkDRqRY3M">Attributions</a></p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script defer src="scripts/main.js"></script>
+  <script type="module" defer src="scripts/listingsModule.js"></script>
+</body>
+</html>
