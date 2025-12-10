@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listings | Prime Real Estate</title>
+  <meta name="description" content="Explore available real estate listings at Prime Real Estate.">
+  <meta name="author" content="Omoregbe Oghodo">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/final.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Prime Real Estate</div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html" class="active">Listings</a></li>
+        <li><a href="form-action.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="listings-container" id="listings-container">
+      <!-- Dynamic listings will load here -->
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+      <div class="modal-content" id="modal-content">
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h2 id="modal-title"></h2>
+        <img id="modal-img" src="" alt="">
+        <p id="modal-price"></p>
+        <p id="modal-bedbath"></p>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+   <p>© 2025 IKPONMWETINOSA Real Estate — Omoregbe Oghodo</p>
+   <p><a href="https://youtu.be/zJIX7GQSOFo">Video demo</a> | <a href="https://youtu.be/dMRkDRqRY3M">Attributions</a></p>
+  <script type="module" src="scripts/data.js"></script>
+  <script type="module" src="scripts/main.js"></script>
+</body>
+</html>

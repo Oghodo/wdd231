@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Prime Real Estate</title>
+  <meta name="description" content="Contact Prime Real Estate for inquiries, questions, or support.">
+  <meta name="author" content="Omoregbe Oghodo">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/final.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Prime Real Estate</div>
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="listings.html">Listings</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-form-section" style="padding: 2rem;">
+      <h1 style="text-align: center; margin-bottom: 1.5rem;">Contact Us</h1>
+      <form action="form-action.html" method="get" id="contact-form">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" id="name" required placeholder="Your Full Name">
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required placeholder="you@example.com">
+
+        <label for="subject">Subject:</label>
+        <input type="text" name="subject" id="subject" required placeholder="Subject">
+
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" rows="5" required placeholder="Your message here..."></textarea>
+
+        <button type="submit" style="margin-top: 1rem; background-color:#ff6600; color:#fff; padding:0.5rem 1rem; border:none; border-radius:5px; cursor:pointer;">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+  <p>© 2025 IKPONMWETINOSA Real Estate — Omoregbe Oghodo</p>
+  <p><a href="https://youtu.be/zJIX7GQSOFo">Video demo</a> | <a href="https://youtu.be/dMRkDRqRY3M">Attributions</a></p>
+
+  <script src="scripts/form.js" type="module"></script>
+</body>
+</html>

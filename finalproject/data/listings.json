@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury Apartment Downtown",
+    "price": "$350,000",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "images/property1.jpg",
+    "description": "Modern apartment with city views and amenities."
+  },
+  {
+    "id": 2,
+    "title": "Cozy Suburban Home",
+    "price": "$220,000",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "image": "images/property2.jpg",
+    "description": "Spacious home with a large backyard."
+  },
+  {
+    "id": 3,
+    "title": "Beachfront Condo",
+    "price": "$450,000",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "image": "images/property3.jpg",
+    "description": "Condo with amazing ocean views and balcony."
+  },
+  {
+    "id": 4,
+    "title": "Modern Studio",
+    "price": "$120,000",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "image": "images/property4.jpg",
+    "description": "Perfect starter home in the city center."
+  },
+  {
+    "id": 5,
+    "title": "Country Cottage",
+    "price": "$180,000",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "images/property5.jpg",
+    "description": "Quiet cottage with garden and scenic views."
+  },
+  {
+    "id": 6,
+    "title": "Luxury Villa",
+    "price": "$750,000",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "image": "images/property6.jpg",
+    "description": "Spacious villa with pool and private parking."
+  },
+  {
+    "id": 7,
+    "title": "Downtown Loft",
+    "price": "$300,000",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "image": "images/property7.jpg",
+    "description": "Loft with open plan and modern finishes."
+  },
+  {
+    "id": 8,
+    "title": "Family Townhouse",
+    "price": "$280,000",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "image": "images/property8.jpg",
+    "description": "Comfortable townhouse near schools and parks."
+  },
+  {
+    "id": 9,
+    "title": "Mountain Cabin",
+    "price": "$200,000",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "image": "images/property9.jpg",
+    "description": "Cabin retreat with amazing mountain views."
+  },
+  {
+    "id": 10,
+    "title": "Urban Apartment",
+    "price": "$250,000",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "image": "images/property10.jpg",
+    "description": "Apartment close to shopping and transit."
+  },
+  {
+    "id": 11,
+    "title": "Riverside House",
+    "price": "$400,000",
+    "bedrooms": 4,
+    "bathrooms": 3,
+    "image": "images/property11.jpg",
+    "description": "Beautiful house along the river."
+  },
+  {
+    "id": 12,
+    "title": "Penthouse Suite",
+    "price": "$850,000",
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "image": "images/property12.jpg",
+    "description": "Luxury penthouse with skyline views."
+  },
+  {
+    "id": 13,
+    "title": "Suburban Bungalow",
+    "price": "$230,000",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "images/property13.jpg",
+    "description": "Cozy bungalow with large backyard."
+  },
+  {
+    "id": 14,
+    "title": "Eco-Friendly Home",
+    "price": "$300,000",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "image": "images/property14.jpg",
+    "description": "Sustainable home with solar panels."
+  },
+  {
+    "id": 15,
+    "title": "City Condo",
+    "price": "$270,000",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "image": "images/property15.jpg",
+    "description": "Modern condo in the heart of downtown."
+  }
+]
